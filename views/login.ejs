@@ -299,78 +299,64 @@
                 <div class="floating ui teal label">10</div>
               </a>
             </div>
+         
             <h2 class="ui center aligned icon header">
               <i class="red colored circular envelope icon"></i>
               Messages
             </h2>
                 
             <div class="chat">
-              <div class
+              
               
                   <div class="chatboxin">
               
               
-                    <div class="chat-container">
-                      <div class="chat-sender msg">
-                        <i class="red colored heartbeat icon"></i>
+                    <!--<div class="chat-container" >
+                      <div class="chat-sender msg" id = "chat_display">
+                        <i class="red colored heartbeat md icon"></i>
                         <strong>Sender</strong>
-                        <div class="chatmsg">hi</div>
+                        <div class="chatmsg">Umang</div>
                       </div>
+                    </div>-->
+
+                   
+                    <div>
+                      <div id="chat_display"><span class="chat-respond msg">Retrieving Chats...</span></div>
                     </div>
-              
-              
-                    <div class="chat-container">
-                      <div class="chat-respond msg">
-                      
-                        <div class="flippd">
-                          <i class="green colored user md icon"></i>
-                          <strong>Responder</strong>
-                          <div class="chatmsg"> Hey 
-                          </div>
-                        </div>
-                      </div>
-                      
-                    </div>
-              
-              
-                    <div class="chat-container">
-                     
-                      <div class="chat-sender msg">
-                        <i class="red colored heartbeat icon"></i>
-                        <strong>Sender</strong>
-                        <div class="chatmsg">Hi</div>
-                      </div>
-                    </div>
-              
-              
-                    <div class="chat-container">
-                      <div class="chat-respond msg">
-                       
-                        <div class="flippd">
-                          <i class="green colored user md icon"></i>
-                          <strong>Responder</strong>
-                          <div class="chatmsg"> Hi
-                          </div>
-                        </div>
-                      </div>
                  
+              
+              
+                    <div class="chat-container">
+                      <div class="chat-respond msg" id = "">
+                        <div class="flippd">
+                          <i class="green colored user md icon"></i>
+                          <strong>Responder</strong>
+                          <div class="chatmsg">Hey</div>
+                        </div>
+                      </div>
                     </div>
+              
+              
+                  
+              
+              
+                 
               
               
                   </div>
-                </div>
+            </div>
               
 
 
           </div>
-          <div class="ui fluid icon input">
-          <input id="chat_input" placeholder="Type something.....">
-               
-        </input>
-        <button class="ui primary button" id="chat_btn">Send</button> 
+
+        <div class="ui fluid icon input">
+          <input id="chat_input" placeholder="Type something....."></input>
+          <button class="ui primary button" id="chat_btn">Send</button> 
         </div>
            
-             </div>
+    </div>
+
       <div class="main-item" id="settings-page" style="display: none;">
         <div class="ui header">SETTINGS</div>
         <hr>
@@ -671,10 +657,11 @@ function remove_online(h){
   var cnt = 0;
   function add_chat(h){
   firebase.database().ref('chat/' +Date()  +'_'+h.user_id+'@'+cnt).set(h);
-}
+  }
 
+  // send button bellow chat 
   $('#chat_btn').click(function(){
-    document.getElementById("chat_display").innerHTML += "<h5>"+firebase.auth().currentUser.email + "</h5> : " + document.getElementById("chat_input").value + "<br>";
+    //document.getElementById("chat_display").innerHTML += '<div class="chat-container"><div class="chat-sender msg">' + firebase.auth().currentUser.email + ' : ' + '</div></div>';
     
     var message = {
       user_id: firebase.auth().currentUser.uid,
@@ -686,7 +673,7 @@ function remove_online(h){
     
   add_chat(message);
   cnt++
-    document.getElementById("chat_input").value = "";
+    //document.getElementById("chat_input").value = "";
  });
 
  var chatonref = firebase.database().ref().child("chat");
@@ -696,7 +683,7 @@ function remove_online(h){
       snapshot.forEach(function(childsnapshot){
         
         var item = childsnapshot.val();
-        chatHTMLitem += "<br>"+ item.email + " : "+item.message;
+        chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg"><i class="red colored heartbeat md icon"></i><strong>Sender</strong><div class="chatmsg">'+ item.email + " : "+item.message + '</div></div></div>';
         
     });
     $("#chat_display").html(chatHTMLitem);
