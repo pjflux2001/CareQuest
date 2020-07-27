@@ -1,4 +1,6 @@
-
+html{
+	scroll-behavior: smooth;
+}
 #mapContainer > div > div:nth-child(0) > div > div {
 	width:99% !important;
 }
@@ -6,6 +8,10 @@
 #card0,#card1,#card2,#card3,#card4 {
 	margin-top: 2vh !important;
 	
+}
+
+#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo{
+	height:100vh;
 }
 
 #card0 > div{
@@ -181,6 +187,10 @@ body > div > div.ui.fluid.two.column.centered.grid.menu{
   }
 	.ui.stackable.menu.open {
 		height:inherit
+	}
+	#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo{
+		margin-top:5vh;
+		height: auto;
 	}
 }
 
