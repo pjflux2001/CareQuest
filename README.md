@@ -1,6 +1,6 @@
 # CareQuest
 
-<p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/Logo.png" width = "25%" height = "25%"></p>
+<p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/Logo.png" width = "33%" height = "33%"></p>
 
 [![License](https://img.shields.io/badge/License-Apache2-red.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Website](https://img.shields.io/badge/View-Website-blue)](https://care-quest.herokuapp.com/)
 
