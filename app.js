@@ -1,3 +1,5 @@
+const { functionsIn } = require("lodash");
+
 var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
@@ -73,7 +75,7 @@ app.get("/test",function(req,res){
 })
 
 //========API Routes=========
-app.get("/api/getdata",function(req,res){
+app.get("/api/getall",function(req,res){
 	Esri.find({},function(err,data){
 		if(err){
 			res.send(err);
@@ -83,9 +85,9 @@ app.get("/api/getdata",function(req,res){
 	}).limit(10);
 });
 //========THIS SEARCHES FOR A SPECIFIC MONGO ID=========//
-app.get("/api/id",(req,res) =>{
+app.get("/api/",(req,res) =>{
 	var _id = req.query._id;
-	Esri.find({_id:_id},function(err,data){
+	Esri.findById(_id,function(err,data){
 		if(err){
 			res.send(err);
 		} else {
@@ -93,6 +95,47 @@ app.get("/api/id",(req,res) =>{
 		}
 	})
 });
+app.put("/api/",(req,res)=>{
+	Esri.findByIdAndUpdate(req.query._id,req.query,function(err,updatedObject){
+		if(err){
+			console.log(err);
+		} else {
+			res.send(updatedObject);
+		}
+	})
+});
+app.post("/api/",(req,res)=>{
+	var newEsri = new Esri({
+	X:req.body.X,
+	Y:req.body.Y,
+	FID:req.body.FID,
+	HOSPITAL_NAME:req.body.HOSPITAL_NAME,
+	HOSPITAL_TYPE:req.body.HOSPITAL_TYPE,
+	HQ_ADDRESS:req.body.HQ_ADDRESS,
+	HQ_CITY:req.body.HQ_CITY,
+	HQ_STATE:req.body.HQ_STATE,
+	HQ_ZIP_CODE:req.body.HQ_ZIP_CODE,
+	COUNTY_NAME:req.body.COUNTY_NAME,
+	STATE_NAME:req.body.STATE_NAME,
+	FIPS:req.body.FIPS,
+	NUM_LICENSED_BEDS:req.body.NUM_LICENSED_BEDS,
+	NUM_STAFFED_BEDS:req.body.NUM_STAFFED_BEDS,
+	NUM_ICU_BEDS:req.body.NUM_ICU_BEDS,
+	ADULT_ICU_BEDS:req.body.ADULT_ICU_BEDS,
+	PEDI_ICU_BEDS:req.body.PEDI_ICU_BEDS,
+	BED_UTILIZATION:req.body.BED_UTILIZATION,
+	Potential_Increase_In_Bed_Capac:req.body.Potential_Increase_In_Bed_Capac,
+	AVG_VENTILATOR_USAGE:req.body.AVG_VENTILATOR_USAGE	
+	})
+	newEsri.save(function(err,obj){
+		if(err){
+			console.log(err);
+		} else {
+			console.log("Successfully Created");
+			res.send(obj);
+		}
+	})
+})
 //=============Fuzzy Search based on raw data ==========//
 
 app.get("/api/fuzzy",(req,res) =>{
@@ -110,7 +153,7 @@ app.get("/api/fuzzy",(req,res) =>{
 });
 
 
-//===============get request Fallback========
+//===============get request Fallback===========//
 
 app.get("*", (req,res) => {
     res.render("404.ejs");
