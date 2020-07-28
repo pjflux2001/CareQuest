@@ -74,7 +74,8 @@ app.get("/test",function(req,res){
 	res.render("test.ejs");
 })
 
-//========API Routes=========
+//========API Routes============//
+//========THIS API GETS ALL THE DATA===========//
 app.get("/api/getall",function(req,res){
 	Esri.find({},function(err,data){
 		if(err){
@@ -95,19 +96,17 @@ app.get("/api/",(req,res) =>{
 		}
 	})
 });
+//===========THIS API Route Searches and Updates the document ============//
 app.put("/api/",(req,res)=>{
-
-
-
 	Esri.findByIdAndUpdate(req.body._id,req.body,{upsert:false,new:true},function(err,updatedObject){
 		if(err){
 			console.log(err);
 		} else {
-			console.log("success");
 			res.send(updatedObject);
 		}
 	})
 });
+//=================THIS API Creates New Documents================//
 app.post("/api/",(req,res)=>{
 	var newEsri = new Esri({
 	X:req.body.X,
@@ -139,7 +138,17 @@ app.post("/api/",(req,res)=>{
 			res.send(obj);
 		}
 	})
-})
+});
+//==================DELELTE BY ID=============//
+app.delete("/api/",(req,res)=>{
+	Esri.findByIdAndRemove(req.body._id,function(err,deletedObj){
+		if(err){
+			console.log(err);
+		} else {
+			res.send(deletedObj);
+		}
+	})
+});
 //=============Fuzzy Search based on raw data ==========//
 
 app.get("/api/fuzzy",(req,res) =>{
@@ -169,4 +178,4 @@ app.get("*", (req,res) => {
 var port = process.env.PORT || 31000
 app.listen(port,process.env.IP,function(){
 	console.log("Server started at port:"+port);
-})
+});
