@@ -277,28 +277,7 @@
           <hr>
           <br>
           <div class= "ui small message" >
-            <button class="ui circular facebook icon button">
-              <i class="facebook icon"></i>
-            </button>
-            <button class="ui circular twitter icon button">
-              <i class="twitter icon"></i>
-            </button>
-            <button class="ui circular linkedin icon button">
-              <i class="linkedin icon"></i>
-            </button>
-            <button class="ui circular google plus icon button">
-              <i class="google plus icon"></i>
-            </button>
-            <div class="ui right floated compact menu">
-              <a class="item">
-                <i class="red colored icon mail"></i> Messages
-                <div class="floating ui red label">7</div>
-              </a>
-              <a class="item">
-                <i class="blue colored icon users"></i> Friends
-                <div class="floating ui teal label">10</div>
-              </a>
-            </div>
+           
          
             <h2 class="ui center aligned icon header">
               <i class="red colored circular envelope icon"></i>
@@ -326,7 +305,7 @@
                  
               
               
-                    <div class="chat-container">
+                 <!--   <div class="chat-container">
                       <div class="chat-respond msg" id = "">
                         <div class="flippd">
                           <i class="green colored user md icon"></i>
@@ -334,7 +313,7 @@
                           <div class="chatmsg">Hey</div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
               
               
                   
@@ -661,7 +640,7 @@ function remove_online(h){
 
   // send button bellow chat 
   $('#chat_btn').click(function(){
-    //document.getElementById("chat_display").innerHTML += '<div class="chat-container"><div class="chat-sender msg">' + firebase.auth().currentUser.email + ' : ' + '</div></div>';
+   //document.getElementById("chat_display").innerHTML += '<div class="chat-container"><div class="chat-respond msg">' + firebase.auth().currentUser.email + ' : ' + '</div></div>';
     
     var message = {
       user_id: firebase.auth().currentUser.uid,
@@ -683,7 +662,7 @@ function remove_online(h){
       snapshot.forEach(function(childsnapshot){
         
         var item = childsnapshot.val();
-        chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg"><i class="red colored heartbeat md icon"></i><strong>Sender</strong><div class="chatmsg">'+ item.email + " : "+item.message + '</div></div></div>';
+        chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg"><div class="chatmsg"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div>';
         
     });
     $("#chat_display").html(chatHTMLitem);
