@@ -73,6 +73,9 @@ app.get('/dashboard',isAuthenticated,function(req,res){
 app.get("/amenities",function(req,res){
 	res.render("amenities.ejs");
 });
+app.get("/form_donor",function(req,res){
+	res.render("form_donor.ejs");
+});
 //==========AJAX TESTING ROUTES =========
 
 app.get("/test",function(req,res){
