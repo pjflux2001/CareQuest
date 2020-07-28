@@ -129,15 +129,19 @@ app.post("/api/",(req,res)=>{
 	BED_UTILIZATION:req.body.BED_UTILIZATION,
 	Potential_Increase_In_Bed_Capac:req.body.Potential_Increase_In_Bed_Capac,
 	AVG_VENTILATOR_USAGE:req.body.AVG_VENTILATOR_USAGE	
-	})
-	newEsri.save(function(err,obj){
-		if(err){
-			console.log(err);
-		} else {
-			console.log("Successfully Created Object");
-			res.send(obj);
-		}
-	})
+	});
+	if(newEsri.HOSPITAL_NAME && newEsri.COUNTY_NAME && newEsri.STATE_NAME && newEsri.HQ_CITY && newEsri.HQ_STATE){
+		newEsri.save(function(err,obj){
+			if(err){
+				console.log(err);
+			} else {
+				res.send(obj);
+			}
+		})
+	} else {
+		res.send("ERROR SMK-1");
+	}
+
 });
 //==================DELELTE BY ID=============//
 app.delete("/api/",(req,res)=>{
