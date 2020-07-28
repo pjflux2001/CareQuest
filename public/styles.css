@@ -10,7 +10,7 @@ html{
 	
 }
 
-#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo{
+#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo,#CareBotInfo{
 	height:100vh;
 }
 
@@ -188,7 +188,10 @@ body > div > div.ui.fluid.two.column.centered.grid.menu{
 	.ui.stackable.menu.open {
 		height:inherit
 	}
-	#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo{
+	h1{
+		text-align: center;
+	}
+	#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo,#CareBotInfo{
 		margin-top:5vh;
 		height: auto;
 	}

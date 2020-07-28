@@ -19,10 +19,8 @@
     </div>
 </div>
 <!-- Service Introduction -->
-<div class="ui container" id="desc">
-  <h1 class="ui centered header" style="font-size:5em;">CareNet Services</h1>
-  <br><hr><br><br><br>
-  <div class="ui centered stackable cards">
+<div id="desc" style="display: flex;justify-content: center;">
+  <div class="ui centered stackable link cards" data-aos="zoom-in-up" data-aos-easing="ease-out-sine" style="align-self:center;">
     <div class="ui link card" href="#PlasmaBankInfo">
       <div class="image" >
         <img src="blooddrop.png" style="height:30vh;width:auto;padding:10px;margin:auto;">
@@ -30,10 +28,24 @@
       <div class="content">
         <div class="header">Plasma Bank</div>
         <div class="description">Find Donors Near You</div>
-        <div class="extra content">
-          <div class="right floated author">
-            <a href="#PlasmaBankInfo">Know More</a>
-          </div>
+      </div>
+      <div class="extra content">
+        <div class="right floated author">
+          <a href="#PlasmaBankInfo">Know More</a>
+        </div>
+      </div>
+    </div>
+    <div class="ui link card" href="#CareNetInfo">
+      <div class="image">
+        <img src="https://pngimage.net/wp-content/uploads/2018/06/hopital-png-5.png" style="height:30vh;width:auto;padding:10px;margin:auto;">
+      </div>
+      <div class="content">
+        <div class="header">CareNet</div>
+        <div class="description">Community of Health Care Providers who care</div>
+      </div>
+      <div class="extra content">
+        <div class="right floated author">
+          <a href="#CareNetInfo">Know More</a>
         </div>
       </div>
     </div>
@@ -44,38 +56,77 @@
       <div class="content">
         <div class="header">Track A Bed</div>
         <div class="description">Make an Informed decision while choosing hospitals</div>
-        <div class="extra content">
-          <div class="right floated author">
-            <a href="#TrackABedInfo">Know More</a>
-          </div>
+      </div>
+      <div class="extra content">
+        <div class="right floated author">
+          <a href="#TrackABedInfo">Know More</a>
         </div>
       </div>
     </div>
-    <div class="ui link card" href="#CareNetInfo">
-      <div class="right floated center aligned six wide column">
-        <img src="https://pngimage.net/wp-content/uploads/2018/06/hopital-png-5.png" style="height:30vh;width:auto;padding:10px;margin:auto;">
+    <div class="ui link card" href="#CareBotInfo">
+      <div class="image">
+        <img src="CareBotPNG.png" style="height:30vh;width:auto;padding:10px;margin:auto;">
       </div>
       <div class="content">
-        <div class="header">CareNet</div>
-        <div class="description">Community of Health Care Providers who care</div>
-        <div class="extra content">
-          <div class="right floated author">
-            <a href="#CareNetInfo">Know More</a>
-          </div>
+        <div class="header">CareBot</div>
+        <div class="description">AI Powered Bot at your Service</div>
+      </div>
+      <div class="extra content">
+        <div class="right floated author">
+          <a href="#CareBotInfo">Know More</a>
         </div>
       </div>
     </div>
   </div>
-  <br><br><hr>
 </div>
 <!-- Plasma Bank Information -->
-<div class="ui middle container" id="PlasmaBankInfo">
+<div class="ui middle container" id="PlasmaBankInfo" style="display: flex;justify-content: center;">
+  <br>
   <div class="ui stackable grid" >
     <div class="ten wide column">
       <h1 class="ui header" style="font-size:4em;">Plasma Bank</h1>
     </div>
     <div class="six wide column">
-      <img class="ui image" src="BloodDonation.png">
+      <img class="ui image" data-aos="fade-up-left" data-aos-easing="ease-in-sine" src="BloodDonation.png">
+    </div>
+  </div>
+</div>
+<br>
+<!-- CareNet Information -->
+<div class="ui middle container" id="CareNetInfo">
+  <h1 class="ui header" style="font-size:4em;">CareNet</h1>
+  <div class="ui stackable grid" >
+    <div class="row">
+      <div class="six wide column">
+        <img class="ui image" data-aos="fade-up-left" data-aos-easing="ease-in-sine" src="DoctorNurses.png">
+      </div>
+      <div class="ten wide column">
+        <div class="ui large header">
+          <div class="content">
+            Network of HealthCare Providers
+            <div class="sub header">
+              Hospitals can register, get verified and become part of our Network
+            </div>
+          </div>
+        </div>
+        <div class="ui large header">
+
+          <div class="content">
+            Network of HealthCare Providers
+            <div class="sub header">
+              Hospitals can register, get verified and become part of our Network
+            </div>
+          </div>
+        </div>
+        <div class="ui large header">
+          <div class="content">
+            Information Gathering
+            <div class="sub header">
+              Hospitals provide real time information allowing users to make informed decision while choosing a hospital
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -83,27 +134,29 @@
 <!-- Track A Bed Information-->
 <div class="ui middle container" id="TrackABedInfo">
   <div class="ui stackable grid" >
-    <div class="six wide column">
-      <img class="ui image" src="HospitalBedPNG.png">
-    </div>
     <div class="ten wide column">
-      <h1 class="ui right floated header" style="font-size:4em;">Track A Bed</h1>
+      <h1 class="ui left floated header" style="font-size:4em;">Track A Bed</h1>
+      <h3 class="ui header"></h3>
+    </div>
+    <div class="six wide column">
+      <img class="ui image" data-aos="fade-up-right" data-aos-easing="ease-in-sine" src="HospitalBedPNG.png">
     </div>
   </div>
 </div>
 <br>
-<!-- CareNet Information -->
-<div class="ui middle container" id="CareNetInfo">
-  <div class="ui stackable grid" >
-    <div class="ten wide column">
-      <h1 class="ui header" style="font-size:4em;">CareNet</h1>
-    </div>
-    <div class="six wide column">
-      <img class="ui image" src="DoctorNurses.png">
-    </div>
-  </div>
+<!-- CareBot Information -->
+<div class="ui middle container" id="CareBotInfo">
+  <div class="ui stackable grid">
+      <div class="row">
+        <div class="six wide column">
+          <img class="ui image" data-aos="fade-up-right" data-aos-easing="ease-in-sine" src="AIBot.png" >
+        </div>
+        <div class="ten wide column">
+          <h1 class="ui right floated header" style="font-size:4em;">CareBot</h1>
+        </div>
+      </div>
+  </div>    
 </div>
-<br>
 <!--
 <h1 class="ui centered header" style="font-size: 3em;">Project Features</h1>
 <br>
