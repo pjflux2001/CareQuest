@@ -67,12 +67,17 @@ app.get("/login",function(req,res){
 
 app.get('/dashboard',isAuthenticated,function(req,res){
 	res.render('dashboard.ejs');
-})
+});
+
+// ======== plasma bank ========= //
+app.get("/amenities",function(req,res){
+	res.render("amenities.ejs");
+});
 //==========AJAX TESTING ROUTES =========
 
 app.get("/test",function(req,res){
 	res.render("test.ejs");
-})
+});
 
 //========API Routes=========
 app.get("/api/getall",function(req,res){
