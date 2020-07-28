@@ -76,18 +76,36 @@
       }
     });  
   }
+//================DASHBOARD AJAX==============//
 
-  function ajaxidGet(id){
+  function apiGet(id){
       //testing id - 5f1ff6422735334c686b92e3
     $.ajax({
       type : "GET",
       url : "/api/",
       data : {_id:id},
       dataType:"json",
+      async:false,
       success: function(result){
-          console.log(result);
+        console.log(result);
         //first empty dashboard
+        $("#mh-beds").val("");
+        $("#mh-mh-st-beds").val("");
+        $("#mh-mh-icu-beds").val("");
+        $("#mh-aicu-beds").val("");
+        $("#mh-picu-beds").val("");
+        $("#mh-util").val("");
+        $("#mh-inc").val("");
+        $("#mh-avg-vent").val("");
         //then append data
+        $("#mh-beds").val(result.NUM_LICENSED_BEDS);
+        $("#mh-st-beds").val(result.NUM_STAFFED_BEDS);
+        $("#mh-icu-beds").val(result.NUM_ICU_BEDS);
+        $("#mh-aicu-beds").val(result.ADULT_ICU_BEDS);
+        $("#mh-picu-beds").val(result.PEDI_ICU_BEDS)
+        $("#mh-util").val(result.BED_UTILIZATION);
+        $("#mh-inc").val(result.Potential_Increase_In_Bed_Capac);
+        $("#mh-avg-vent").val(result.AVG_VENTILATOR_USAGE);
       },
       error : function(e) {
         //user interactive errors
@@ -95,6 +113,4 @@
       }
     });   
   }
-
-
 </script>
