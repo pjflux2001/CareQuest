@@ -125,9 +125,7 @@ src: url("fonts/fontawesome-webfont.eot");
 	    -o-transition-duration: .2s;
 	    transition-duration: .2s;
 	}
-	.hamburger.active {
 
-	}
 	.hamburger.active .hamburger-bun {
 		margin: 0;
 		-webkit-transform-origin: center center;
