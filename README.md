@@ -1,6 +1,6 @@
 # CareQuest
 
-<img src="public/logo.png" style="width: 50%; height: 50%">
+<img src="public/logo.png">
 
 [![License](https://img.shields.io/badge/License-Apache2-red.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Website](https://img.shields.io/badge/View-Website-blue)](https://care-quest.herokuapp.com/)
 
