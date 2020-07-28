@@ -58,7 +58,7 @@ It's imperative that learning and creating can continue when educational institu
 
 ## Project roadmap
 
-<p align="center">![Roadmap](https://github.com/pjflux2001/CareQuest/blob/master/public/CareQuest%20Roadmap.png)</p>
+<p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/CareQuest%20Roadmap.png"></p>
 
 ## Getting started
 
