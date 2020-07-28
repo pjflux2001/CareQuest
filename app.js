@@ -82,6 +82,9 @@ app.get("/form_patient",function(req,res){
 app.get("/plasma_form",function(req,res){
 	res.render("common_pool.ejs");
 });
+app.get("/plasma_bank",function(req,res){
+	res.render("plasma_bank.ejs");
+});
 //==========AJAX TESTING ROUTES =========
 
 app.get("/test",function(req,res){
