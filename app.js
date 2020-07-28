@@ -96,10 +96,14 @@ app.get("/api/",(req,res) =>{
 	})
 });
 app.put("/api/",(req,res)=>{
-	Esri.findByIdAndUpdate(req.query._id,req.query,function(err,updatedObject){
+
+
+
+	Esri.findByIdAndUpdate(req.body._id,req.body,{upsert:false,new:true},function(err,updatedObject){
 		if(err){
 			console.log(err);
 		} else {
+			console.log("success");
 			res.send(updatedObject);
 		}
 	})
@@ -131,7 +135,7 @@ app.post("/api/",(req,res)=>{
 		if(err){
 			console.log(err);
 		} else {
-			console.log("Successfully Created");
+			console.log("Successfully Created Object");
 			res.send(obj);
 		}
 	})
