@@ -666,7 +666,7 @@ function remove_online(h){
       snapshot.forEach(function(childsnapshot){
         
         var item = childsnapshot.val();
-        chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg" style="background: brown;"><div class="chatmsg" style="float: none;"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div>';
+        chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg" style="background: brown; max-width: max-content"><div class="chatmsg" style="float: none;"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div>';
         document.getElementById('chat_input').value="";
         
 
@@ -675,7 +675,8 @@ function remove_online(h){
     var m=0;
   for(m=0; m<document.getElementsByClassName('chatmsg').length; m++){
       if(document.getElementsByClassName('chatmsg')[m].innerText.search(firebase.auth().currentUser.email) >= 0){
-        document.getElementsByClassName('chatmsg')[m].style.float = "right";
+        document.getElementsByClassName('chat-sender msg')[m].style.background = "indigo";
+        //make chat bubbles pushed to right
       }
   }
 
