@@ -1,0 +1,100 @@
+<script>
+      //LOCATION GET
+
+  
+  function fuzzynameGet(){
+    var search_query = {
+      HOSPITAL_NAME : $("#HOSPITAL_NAME").val(),
+      STATE_NAME : "",
+      COUNTY_NAME : "",
+      HQ_CITY : "",
+    }
+    $.ajax({
+      type : "GET",
+      contentType: "application/json",
+      url : "/api/fuzzy",
+      data : search_query,
+      dataType:"json",
+      success: function(result){
+        $('#getResultDiv2 ul').empty();
+        $.each(result, function(i, hospital){
+          $('#getResultDiv2 .list-group').append("HOSPITAL NAME - "+hospital.HOSPITAL_NAME + " FID KEY- " + hospital.FID + "<br>")
+        });
+        console.log("Success: ", result);
+      },
+      error : function(e) {
+        $("#getResultDiv2").html("<strong>Error</strong>");
+        console.log("ERROR: ", e);
+      }
+    });  
+  }
+
+  //FILTER MECHANISM
+  function fuzzyfilterGet(){
+    var search_query = {
+      HOSPITAL_NAME : $("#HOSPITAL_NAME").val(),
+      STATE_NAME : $("#STATE_NAME").val(),
+      COUNTY_NAME : $("#COUNTY_NAME").val(),
+      HQ_CITY : "",
+    }
+    $.ajax({
+      type : "GET",
+      contentType: "application/json",
+      url : "/api/fuzzy",
+      data : search_query,
+      dataType:"json",
+      success: function(result){
+        $('#getResultDiv2 ul').empty();
+        $.each(result, function(i, hospital){
+          $('#getResultDiv2 .list-group').append("HOSPITAL NAME - "+hospital.HOSPITAL_NAME + " FID KEY- " + hospital.FID + "<br>")
+        });
+        console.log("Success: ", result);
+      },
+      error : function(e) {
+        $("#getResultDiv2").html("<strong>Error</strong>");
+        console.log("ERROR: ", e);
+      }
+    });  
+  }
+
+
+  // DO GET
+  function ajaxGet(){
+    $.ajax({
+      type : "GET",
+      url : "/api/getdata",
+      success: function(result){
+        $('#getResultDiv ul').empty();
+        $.each(result, function(i, hospital){
+          $('#getResultDiv .list-group').append("County Name - "+hospital.COUNTY_NAME + "<br>" + " FID KEY- " + hospital.FID + "<br>")
+        });
+        console.log("Success: ", result);
+      },
+      error : function(e) {
+        $("#getResultDiv").html("<strong>Error</strong>");
+        console.log("ERROR: ", e);
+      }
+    });  
+  }
+
+  function ajaxidGet(id){
+      //testing id - 5f1ff6422735334c686b92e3
+    $.ajax({
+      type : "GET",
+      url : "/api/",
+      data : {_id:id},
+      dataType:"json",
+      success: function(result){
+          console.log(result);
+        //first empty dashboard
+        //then append data
+      },
+      error : function(e) {
+        //user interactive errors
+        console.log("ERROR: ", e);
+      }
+    });   
+  }
+
+
+</script>
