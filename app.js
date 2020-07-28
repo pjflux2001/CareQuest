@@ -76,6 +76,9 @@ app.get("/amenities",function(req,res){
 app.get("/form_donor",function(req,res){
 	res.render("form_donor.ejs");
 });
+app.get("/form_patient",function(req,res){
+	res.render("form_patient.ejs");
+});
 //==========AJAX TESTING ROUTES =========
 
 app.get("/test",function(req,res){
