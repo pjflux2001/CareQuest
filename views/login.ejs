@@ -634,13 +634,15 @@ function remove_online(h){
 
 
   var cnt = 0;
+  
   function add_chat(h){
   firebase.database().ref('chat/' +Date()  +'_'+h.user_id+'@'+cnt).set(h);
   }
+  
 
   // send button bellow chat 
   $('#chat_btn').click(function(){
-   //document.getElementById("chat_display").innerHTML += '<div class="chat-container"><div class="chat-respond msg">' + firebase.auth().currentUser.email + ' : ' + '</div></div>';
+   //document.getElementById("chat_display").innerHTML += '<div class="chat-container"><div class="chat-respond msg"style="background: aqua;" >' + firebase.auth().currentUser.email + ' : ' + '</div></div>';
     
     var message = {
       user_id: firebase.auth().currentUser.uid,
@@ -652,7 +654,9 @@ function remove_online(h){
     
   add_chat(message);
   cnt++
-    //document.getElementById("chat_input").value = "";
+     //document.getElementById("chat_input").value = "";
+
+     
  });
 
  var chatonref = firebase.database().ref().child("chat");
@@ -662,14 +666,22 @@ function remove_online(h){
       snapshot.forEach(function(childsnapshot){
         
         var item = childsnapshot.val();
-        chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg"><div class="chatmsg"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div>';
+        chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg" style="background: brown;"><div class="chatmsg" style="float: none;"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div>';
         document.getElementById('chat_input').value="";
+        
+
     });
     $("#chat_display").html(chatHTMLitem);
+    var m=0;
+  for(m=0; m<document.getElementsByClassName('chatmsg').length; m++){
+      if(document.getElementsByClassName('chatmsg')[m].innerText.search(firebase.auth().currentUser.email) >= 0){
+        document.getElementsByClassName('chatmsg')[m].style.float = "right";
+      }
+  }
 
   });
 
-
+  
 //Firebase Uploader
 
 var uploader = document.getElementById('uploader');
