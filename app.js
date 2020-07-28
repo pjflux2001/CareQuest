@@ -70,6 +70,9 @@ app.get('/dashboard',isAuthenticated,function(req,res){
 });
 
 // ======== plasma bank ========= //
+app.get("/index_plasma",function(req,res){
+	res.render("index_plasma.ejs");
+});
 app.get("/amenities",function(req,res){
 	res.render("amenities.ejs");
 });
