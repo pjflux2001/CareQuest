@@ -67,12 +67,32 @@ app.get("/login",function(req,res){
 
 app.get('/dashboard',isAuthenticated,function(req,res){
 	res.render('dashboard.ejs');
-})
+});
+
+// ======== plasma bank ========= //
+app.get("/index_plasma",function(req,res){
+	res.render("index_plasma.ejs");
+});
+app.get("/amenities",function(req,res){
+	res.render("amenities.ejs");
+});
+app.get("/form_donor",function(req,res){
+	res.render("form_donor.ejs");
+});
+app.get("/form_patient",function(req,res){
+	res.render("form_patient.ejs");
+});
+app.get("/plasma_form",function(req,res){
+	res.render("common_pool.ejs");
+});
+app.get("/plasma_bank",function(req,res){
+	res.render("plasma_bank.ejs");
+});
 //==========AJAX TESTING ROUTES =========
 
 app.get("/test",function(req,res){
 	res.render("test.ejs");
-})
+});
 
 //========API Routes============//
 //========THIS API GETS ALL THE DATA===========//

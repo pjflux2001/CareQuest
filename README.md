@@ -1,5 +1,7 @@
 # CareQuest
 
+<p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/Logo.png" width = "33%" height = "33%"></p>
+
 [![License](https://img.shields.io/badge/License-Apache2-red.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Website](https://img.shields.io/badge/View-Website-blue)](https://care-quest.herokuapp.com/)
 
 A basic GitHub repository example for Call for Code submissions and those projects that join the Code and Response initiative. Not all sections or files are required. You can make this as simple or as in-depth as you need.
@@ -56,7 +58,7 @@ It's imperative that learning and creating can continue when educational institu
 
 ## Project roadmap
 
-![Roadmap](roadmap.jpg)
+<p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/CareQuest%20Roadmap.png"></p>
 
 ## Getting started
 
