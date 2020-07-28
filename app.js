@@ -79,7 +79,8 @@ app.get("/test",function(req,res){
 	res.render("test.ejs");
 });
 
-//========API Routes=========
+//========API Routes============//
+//========THIS API GETS ALL THE DATA===========//
 app.get("/api/getall",function(req,res){
 	Esri.find({},function(err,data){
 		if(err){
@@ -100,8 +101,9 @@ app.get("/api/",(req,res) =>{
 		}
 	})
 });
+//===========THIS API Route Searches and Updates the document ============//
 app.put("/api/",(req,res)=>{
-	Esri.findByIdAndUpdate(req.query._id,req.query,function(err,updatedObject){
+	Esri.findByIdAndUpdate(req.body._id,req.body,{upsert:false,new:true},function(err,updatedObject){
 		if(err){
 			console.log(err);
 		} else {
@@ -109,6 +111,7 @@ app.put("/api/",(req,res)=>{
 		}
 	})
 });
+//=================THIS API Creates New Documents================//
 app.post("/api/",(req,res)=>{
 	var newEsri = new Esri({
 	X:req.body.X,
@@ -131,16 +134,30 @@ app.post("/api/",(req,res)=>{
 	BED_UTILIZATION:req.body.BED_UTILIZATION,
 	Potential_Increase_In_Bed_Capac:req.body.Potential_Increase_In_Bed_Capac,
 	AVG_VENTILATOR_USAGE:req.body.AVG_VENTILATOR_USAGE	
-	})
-	newEsri.save(function(err,obj){
+	});
+	if(newEsri.HOSPITAL_NAME && newEsri.COUNTY_NAME && newEsri.STATE_NAME && newEsri.HQ_CITY && newEsri.HQ_STATE){
+		newEsri.save(function(err,obj){
+			if(err){
+				console.log(err);
+			} else {
+				res.send(obj);
+			}
+		})
+	} else {
+		res.send("ERROR SMK-1");
+	}
+
+});
+//==================DELELTE BY ID=============//
+app.delete("/api/",(req,res)=>{
+	Esri.findByIdAndRemove(req.body._id,function(err,deletedObj){
 		if(err){
 			console.log(err);
 		} else {
-			console.log("Successfully Created");
-			res.send(obj);
+			res.send(deletedObj);
 		}
 	})
-})
+});
 //=============Fuzzy Search based on raw data ==========//
 
 app.get("/api/fuzzy",(req,res) =>{
@@ -170,4 +187,4 @@ app.get("*", (req,res) => {
 var port = process.env.PORT || 31000
 app.listen(port,process.env.IP,function(){
 	console.log("Server started at port:"+port);
-})
+});
