@@ -663,7 +663,7 @@ function remove_online(h){
         
         var item = childsnapshot.val();
         chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg"><div class="chatmsg"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div>';
-        
+        document.getElementById('chat_input').value="";
     });
     $("#chat_display").html(chatHTMLitem);
 
