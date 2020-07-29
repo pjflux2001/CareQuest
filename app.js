@@ -82,7 +82,7 @@ app.get("/form_donor",function(req,res){
 app.get("/form_patient",function(req,res){
 	res.render("form_patient.ejs");
 });
-app.get("/plasma_form",function(req,res){
+app.get("/common_pool",function(req,res){
 	res.render("common_pool.ejs");
 });
 app.get("/plasma_bank",function(req,res){
