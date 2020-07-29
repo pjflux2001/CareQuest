@@ -88,7 +88,21 @@
       async:false,
       success: function(result){
         console.log(result);
-        //first empty dashboard
+        //first empty dashboard========>
+        //these for profile
+        $("#mh-x").val("");
+        $("#mh-y").val("");
+        $("#mh-fid").val("");
+        $("#mh-hname").val("");
+        $("#mh-htype").val("");
+        $("#mh-hq-add").val("");
+        $("#mh-hq-city").val("");
+        $("#mh-hq-state").val("");
+        $("#mh-hq-zip").val("");
+        $("#mh-county").val("");
+        $("#mh-state").val("");
+        $("#mh-fips").val("");
+        //these for manage
         $("#mh-beds").val("");
         $("#mh-mh-st-beds").val("");
         $("#mh-mh-icu-beds").val("");
@@ -97,7 +111,21 @@
         $("#mh-util").val("");
         $("#mh-inc").val("");
         $("#mh-avg-vent").val("");
-        //then append data
+        //then append data=========>
+        //profile tab
+        $("#mh-x").val(result.X);
+        $("#mh-y").val(result.Y);
+        $("#mh-fid").val(result.FID);
+        $("#mh-hname").val(result.HOSPITAL_NAME);
+        $("#mh-htype").val(result.HOSPITAL_TYPE);
+        $("#mh-hq-add").val(result.HQ_ADDRESS);
+        $("#mh-hq-city").val(result.HQ_CITY);
+        $("#mh-hq-state").val(result.HQ_STATE);
+        $("#mh-hq-zip").val(result.HQ_ZIP_CODE);
+        $("#mh-county").val(result.COUNTY_NAME);
+        $("#mh-state").val(result.STATE_NAME);
+        $("#mh-fips").val(result.FIPS);
+        //manage tab
         $("#mh-beds").val(result.NUM_LICENSED_BEDS);
         $("#mh-st-beds").val(result.NUM_STAFFED_BEDS);
         $("#mh-icu-beds").val(result.NUM_ICU_BEDS);
