@@ -8,8 +8,18 @@
             AOS.init();
         </script>
         <script>
-         // ADD WATSON here
-        </script>
+            window.watsonAssistantChatOptions = {
+                integrationID: "3a38c64f-ef6d-4910-b314-78f42d76a652", // The ID of this integration.
+                region: "eu-gb", // The region your integration is hosted in.
+                serviceInstanceID: "411ae7c2-7181-492b-aa64-fdcaafb19e28", // The ID of your service instance.
+                onLoad: function(instance) { instance.render(); }
+              };
+            setTimeout(function(){
+              const t=document.createElement('script');
+              t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+              document.head.appendChild(t);
+            });
+          </script>
 
 
          <!-- Bootstrap CSS only -->
