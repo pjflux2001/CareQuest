@@ -10,56 +10,53 @@ RESOURCE MANAGEMENT
       <hr>
       </div>
     <hr>
-    <form>
-    <div class="ui container">
-      <div class="ui fluid labeled input">
-        <div class="ui basic label">
-          Licensed Beds
-        </div>
-        <input id="mh-beds" type="text" readonly>
+    <form class="ui form">
+      <div class="ui subheader" style="color:green;">
+        This information will help us in resource allocation
       </div>
-      <div class="ui fluid labeled input">
-        <div class="ui basic label">
-          Staffed Beds
+      <div class="two fields">
+        <div class="field">
+          <label>Licensed Beds</label>
+          <input type="number" id="mh-beds" readonly>
         </div>
-        <input id="mh-st-beds" type="text" readonly>
-      </div>
-      <div class="ui fluid labeled input">
-        <div class="ui basic label">
-          ICU Beds
+        <div class="field">
+          <label>Staffed Beds</label>
+          <input type="number" id="mh-st-beds" readonly>
         </div>
-        <input id="mh-icu-beds" type="text" readonly>
       </div>
-      <div class="ui fluid labeled input">
-        <div class="ui basic label">
-          Adult ICU Beds
+      <div class="three fields">
+        <div class="field">
+          <label>ICU Beds</label>
+          <input type="number" id="mh-icu-beds" readonly>
         </div>
-        <input id="mh-aicu-beds" type="text" readonly>
-      </div>
-      <div class="ui fluid labeled input">
-        <div class="ui basic label">
-          Ped ICU Beds
+        <div class="field">
+          <label>Adult ICU Beds</label>
+          <input type="number" id="mh-aicu-beds" readonly>
         </div>
-        <input id="mh-picu-beds" type="text" readonly>
-      </div>
-      <div class="ui fluid labeled input">
-        <div class="ui basic label">
-          Bed Utilization
+        <div class="field">
+          <label>Pediatric ICU Beds</label>
+          <input type="number" id="mh-picu-beds" readonly>
         </div>
-        <input id="mh-util" type="text" readonly>
       </div>
-      <div class="ui fluid labeled input">
-        <div class="ui basic label">
-          Potential Increase in Bed Capacity
+      <div class="two fields">
+        <div class="field">
+          <label>Bed Utilization</label>
+          <input type="number" id="mh-util" readonly>
         </div>
-        <input id="mh-inc" type="text" readonly>
-      </div>
-      <div class="ui fluid labeled input">
-        <div class="ui basic label">
-          Average Ventilator Usage
+        <div class="field">
+          <label>Expected Bed Capacity Increase</label>
+          <input type="number" id="mh-inc" readonly>
         </div>
-        <input id="mh-avg-vent" type="text" readonly>
       </div>
-    </div>
+      <div class="inline fields">
+        <label>Average Ventilator utilization</label>
+        <div class="fourteen wide field">
+          <input type="number" id="mh-avg-vent" readonly>
+        </div>
+      </div>
+      <div class="ui animated blue button">
+        <div class="visible content">Save Changes</div>
+        <div class="hidden content"><i class="paper plane icon"></i></div>
+      </div>
     </form>
   </div>
