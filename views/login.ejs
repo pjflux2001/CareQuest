@@ -172,12 +172,12 @@
 
                    
                     <div>
-                      <div id="chat_display"><span class="chat-respond msg">Retrieving Chats...</span></div>
+                      <div id="chat_display"><span class="chat-sender msg">Retrieving Chats...</span></div>
                     </div>
                  
               
               
-                 <!--   <div class="chat-container">
+                    <!--<div class="chat-container">
                       <div class="chat-respond msg" id = "">
                         <div class="flippd">
                           <i class="green colored user md icon"></i>
@@ -185,7 +185,7 @@
                           <div class="chatmsg">Hey</div>
                         </div>
                       </div>
-                    </div> -->
+                    </div>-->
               
               
                   
@@ -542,22 +542,28 @@ function remove_online(h){
  chatonref.on("value", function(snapshot) {
       
       var chatHTMLitem="";
+      var currentUser = firebase.auth().currentUser.email;
       snapshot.forEach(function(childsnapshot){
         
         var item = childsnapshot.val();
-        chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg" style="background: brown; max-width: max-content"><div class="chatmsg" style="float: none;"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div>';
-        document.getElementById('chat_input').value="";
+        if(item.email == currentUser){
+          chatHTMLitem += '<div class="chat-container"><div class="chat-sender msg" style="background: brown; max-width: max-content"><div class="chatmsg" style="float: none;"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div>';
+        }
+        else{
+          chatHTMLitem += '<div class="chat-container" style="text-align: right"><div class="chat-respond msg" style="background: indigo; max-width: max-content"><div class="flippd"><div class="chatmsg" style="float: none;"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div></div>';
+        }
+        //document.getElementById('chat_input').value="";
         
 
     });
     $("#chat_display").html(chatHTMLitem);
-    var m=0;
+    /*var m=0;
   for(m=0; m<document.getElementsByClassName('chatmsg').length; m++){
       if(document.getElementsByClassName('chatmsg')[m].innerText.search(firebase.auth().currentUser.email) >= 0){
         document.getElementsByClassName('chat-sender msg')[m].style.background = "indigo";
         //make chat bubbles pushed to right
       }
-  }
+  }*/
 
   });
 
