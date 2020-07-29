@@ -10,7 +10,7 @@ html{
 	
 }
 
-#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo,#CareBotInfo{
+#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo,#CareBotInfo,#Mission{
 	height:100vh;
 }
 
@@ -189,7 +189,7 @@ body > div > div.ui.fluid.two.column.centered.grid.menu{
 	h1{
 		text-align: center;
 	}
-	#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo,#CareBotInfo{
+	#desc,#PlasmaBankInfo,#CareNetInfo,#TrackABedInfo,#CareBotInfo,#Mission{
 		margin-top:5vh;
 		height: auto;
 	}
