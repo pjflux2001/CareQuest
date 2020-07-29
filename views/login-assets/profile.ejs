@@ -1,80 +1,86 @@
 <div class="main-item" id="profile-page" style="display:none;">
-    <div class="ui header">PROFILE<button class="ui mini positive right floated button">EDIT</button></div>
+  <div class="ui segment">
+  <h2 class="ui header"><button id="EditProfilePageBtn" class="ui mini positive right floated button">EDIT</button>
+    <i class="blue colored user icon"></i>
+    <div class="content">
+      PROFILE
+      <div class="sub header"></div>
+    </div>
+  </h2>
     <hr>
+    </div>
     <form>
-      <div class="ui container">
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            X
-          </div>
-          <input id="mh-x" type="text" readonly>
+      <div class="ui form" id="new-form">
+        <div class="ui dividing green header">
+          Hospital
         </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            Y
+          <div class="fields">
+            <div class="eleven wide field">
+              <label>Hospital Name</label>
+              <input type="text" id="mh-hname" readonly>
+            </div>
+            <div class="five wide field">
+              <label>Hospital Type</label>
+              <input type="text" id="mh-htype" readonly>
+            </div>
           </div>
-          <input id="mh-y" type="text" readonly>
-        </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            FID
+        <div class="ui dividing green header">Location</div>
+        <h4 class="ui header">Location Geographical Coordinates<a target="_blank" href="https://www.latlong.net/"><i class="question circle black icon" data-content="Click here to get Coordinates of the hospital"></i></a></h4>
+          <div class="two fields">
+            <div class="field">
+              <label>Lattitude</label>
+              <input type="text" id="mh-x" readonly>
+            </div>
+            <div class="field">
+              <label>Longitude</label>
+              <input type="text" id="mh-y" readonly>
+            </div>
           </div>
-          <input id="mh-fid" type="text" readonly>
-        </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            Hospital Name
+        <h4 class="ui green header">Headquarters Address</h4>
+          <div class="field">
+            <label>Address</label>
+            <input type="text" id="mh-hq-add" readonly>
           </div>
-          <input id="mh-hname" type="text" readonly>
-        </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            Hospital Type
+          <div class="three fields">
+            <div class="field">
+              <label>City</label>
+              <input type="text" id="mh-hq-city" readonly>
+            </div>
+            <div class="field">
+              <label>State</label>
+              <input type="text" id="mh-hq-state" readonly>
+            </div>
+            <div class="field">
+              <label>Zip Code</label>
+              <input type="text" id="mh-hq-zip" readonly>
+            </div>
           </div>
-          <input id="mh-htype" type="text" readonly>
-        </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            HQ Address
+        <h4 class="ui green header">Hospital Address</h4>
+          <div class="three fields">
+            <div class="field">
+              <label>Country</label>
+              <input type="text" id="mh-country" readonly>
+            </div>
+            <div class="field">
+              <label>State</label>
+              <input type="text" id="mh-state" readonly>
+            </div>
+            <div class="field">
+              <label>FIPS</label>
+              <input type="text" id="mh-fips" readonly>
+            </div>
           </div>
-          <input id="mh-hq-add" type="text" readonly>
-        </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            HQ City
+          <div class="ui buttons" id="ProfileSubmitBtnGrp">
+            <div class="ui animated blue button" type="submit" id="submitprofilebtn">
+              <div class="visible content">Save Changes</div>
+              <div class="hidden content"><i class="paper plane icon"></i></div>
+            </div>
+            <div class="ui animated red button" type="submit" id="cancelprofilebtn">
+              <div class="visible content">Cancel</div>
+              <div class="hidden content"><i class="trash icon"></i></div>
+            </div>
           </div>
-          <input id="mh-hq-city" type="text" readonly>
         </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            HQ State
-          </div>
-          <input id="mh-hq-state" type="text" readonly>
-        </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            HQ Zip Code
-          </div>
-          <input id="mh-hq-zip" type="text" readonly>
-        </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            County Name
-          </div>
-          <input id="mh-county" type="text" readonly>
-        </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            State
-          </div>
-          <input id="mh-state" type="text" readonly>
-        </div>
-        <div class="ui fluid labeled input">
-          <div class="ui basic label">
-            FIPS
-          </div>
-          <input id="mh-fips" type="text" readonly>
-        </div>
-      </div>
+      
     </form>
   </div>
