@@ -1,6 +1,6 @@
 <div class="main-item" id="profile-page" style="display:none;">
   <div class="ui segment">
-  <h2 class="ui header"><button class="ui mini positive right floated button">EDIT</button>
+  <h2 class="ui header"><button id="EditProfilePageBtn" class="ui mini positive right floated button">EDIT</button>
     <i class="blue colored user icon"></i>
     <div class="content">
       PROFILE
@@ -70,9 +70,15 @@
               <input type="text" id="mh-fips" readonly>
             </div>
           </div>
-          <div class="ui animated blue button">
-            <div class="visible content">Save Changes</div>
-            <div class="hidden content"><i class="paper plane icon"></i></div>
+          <div class="ui buttons" id="ProfileSubmitBtnGrp">
+            <div class="ui animated blue button" type="submit" id="submitprofilebtn">
+              <div class="visible content">Save Changes</div>
+              <div class="hidden content"><i class="paper plane icon"></i></div>
+            </div>
+            <div class="ui animated red button" type="submit" id="cancelprofilebtn">
+              <div class="visible content">Cancel</div>
+              <div class="hidden content"><i class="trash icon"></i></div>
+            </div>
           </div>
         </div>
       

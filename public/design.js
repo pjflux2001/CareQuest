@@ -63,7 +63,7 @@ function closebutton(i){
         }
     }
 }
-
+//===========Post Login interface==================//
 function displayMainPage(i){
     var pages = ["dashboard-page","profile-page","Manage-Hospital","chat","settings-page"];
     for(j=0;j<pages.length;j++){

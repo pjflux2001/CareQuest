@@ -1,6 +1,6 @@
 <div class="main-item" id="Manage-Hospital" style="display:none;">
   <div class="ui segment">
-    <h2 class="ui header"><button class="ui mini positive right floated button">EDIT</button>
+    <h2 class="ui header"><button id="EditManagePageBtn" class="ui mini positive right floated button">EDIT</button>
       <i class="red colored hospital icon"></i>
       <div class="content">    
 RESOURCE MANAGEMENT
@@ -53,9 +53,15 @@ RESOURCE MANAGEMENT
           <input type="number" id="mh-avg-vent" readonly>
         </div>
       </div>
-      <div class="ui animated blue button">
-        <div class="visible content">Save Changes</div>
-        <div class="hidden content"><i class="paper plane icon"></i></div>
+      <div class="ui buttons" id="ManageSubmitBtnGrp">
+        <div class="ui animated blue button" type="submit" id="submitmanagebtn">
+          <div class="visible content">Save Changes</div>
+          <div class="hidden content"><i class="paper plane icon"></i></div>
+        </div>
+        <div class="ui animated red button" type="submit" id="cancelmanagebtn">
+          <div class="visible content">Cancel</div>
+          <div class="hidden content"><i class="trash icon"></i></div>
+        </div>
       </div>
     </form>
   </div>
