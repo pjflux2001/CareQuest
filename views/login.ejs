@@ -1,6 +1,6 @@
 <%- include("./partials/header") %>
 
-      <link rel = "stylesheet" href="loginstyle.css">
+      <link id="login-style" rel = "stylesheet" href="loginstyle.css">
       <div id="login_div" class = "login-page">
 
 			<div class = "form">
@@ -109,7 +109,7 @@
             </div>
             <hr>
             <div class="sidebar-item">
-                <button class="black colored ui fluid button" onclick="logout(); remove_online(firebase.auth().currentUser);">
+                <button id="logout" class="black colored ui fluid button" onclick="logout(); remove_online(firebase.auth().currentUser);">
                   <i class="grey colored share square outline icon"></i></i><span> Logout</span>
                 </button>
             </div>
@@ -616,6 +616,23 @@ fileBtn.addEventListener('change',function(e) {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
 <script src="design.js"></script>
+<script>
+// this one is jut to wait for the page to load for different style-sheets
+document.addEventListener('DOMContentLoaded', () => {
+
+const loginStylesheet = document.getElementById('login-style');
+const loginBtn = document.getElementById('login');
+const logoutBtn = document.getElementById('logout');
+loginBtn.addEventListener('click', () => {
+    // if its loginstyle -> change it to dashboard style
+        loginStylesheet.href = 'dashboard.css';
+        
+    })
+logoutBtn.addEventListener('click',()=>{
+        loginStylesheet.href = 'loginstyle.css'
+})
+});
+</script>
 <script>
    //WATSON GOES HERE
 </script>
