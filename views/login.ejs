@@ -228,9 +228,16 @@ function toggle_status(){
   }
     
   firebase.auth().onAuthStateChanged(function(user) {
+    const loginStylesheet = document.getElementById('login-style');
     if (user) {
       // User is signed in.
       dbDataRetriever();//This function brings data from mongo
+     
+      if(firebase.auth().currentUser){
+        loginStylesheet.href = 'dashboard.css';
+      } else {
+        loginStylesheet.href = 'loginstyle.css'
+      }
   
       document.getElementById("user_div").style.display = "block";
       document.getElementById("login_div").style.display = "none";
@@ -241,7 +248,7 @@ function toggle_status(){
 
   
       if(user != null){
-  
+
         var email_id = user.email;
         var email_verfied = user.emailVerified;
   
@@ -257,7 +264,12 @@ function toggle_status(){
   
     } else {
       // No user is signed in.
-  
+              //login fuck up fix
+      if(firebase.auth().currentUser){
+        loginStylesheet.href = 'dashboard.css';
+      } else {
+        loginStylesheet.href = 'loginstyle.css'
+      }
       document.getElementById("user_div").style.display = "none";
       document.getElementById("login_div").style.display = "block";
     }
@@ -578,23 +590,6 @@ fileBtn.addEventListener('change',function(e) {
     $('#ManageSubmitBtnGrp').show();
   });
 -->
-</script>
-<script>
-// this one is jut to wait for the page to load for different style-sheets
-document.addEventListener('DOMContentLoaded', () => {
-
-const loginStylesheet = document.getElementById('login-style');
-const loginBtn = document.getElementById('login');
-const logoutBtn = document.getElementById('logout');
-loginBtn.addEventListener('click', () => {
-    // if its loginstyle -> change it to dashboard style
-        loginStylesheet.href = 'dashboard.css';
-        
-    })
-logoutBtn.addEventListener('click',()=>{
-        loginStylesheet.href = 'loginstyle.css'
-})
-});
 </script>
 <script>
 var enter_evt = document.getElementById("chat_input");
