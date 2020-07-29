@@ -276,6 +276,23 @@
       $('#EditManagePageBtn').show();
       $('#ManageSubmitBtnGrp').hide();
     })
+    $('#EditProfilePageBtn').click(function(){
+      $('input').attr('readonly',false);
+      $('#EditProfilePageBtn').hide();
+      $('#ProfileSubmitBtnGrp').show();
+  });
+    $('#submitprofilebtn').click(function(){
+      $('input').attr('readonly',true);
+      dbDataUpdater();
+      $('#EditProfilePageBtn').show();
+      $('#ProfileSubmitBtnGrp').hide();
+    })
+    $('#cancelprofilebtn').click(function(){
+      $('input').attr('readonly',true);
+      dbDataRetriever();
+      $('#EditProfilePageBtn').show();
+      $('#ProfileSubmitBtnGrp').hide();
+    })
   })
 
 
