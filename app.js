@@ -23,7 +23,8 @@ function isAuthenticated(req,res,next){
 mongoose.connect(uri,{
 	useNewUrlParser:true,
 	useCreateIndex:true,
-	useUnifiedTopology:true
+	useUnifiedTopology:true,
+	useFindAndModify: false
 }).then(()=>{
 	console.log("Connected to Database");
 }).catch(err =>{

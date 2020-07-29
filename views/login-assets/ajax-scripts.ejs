@@ -87,7 +87,6 @@
       dataType:"json",
       async:false,
       success: function(result){
-        console.log(result);
         //first empty dashboard========>
         //these for profile
         $("#mh-x").val("");
@@ -141,11 +140,97 @@
       }
     });   
   }
+  function apiUpdate(id){
+      //testing id - 5f1ff6422735334c686b92e3
+    var req_body = {
+        _id:id,
+        X : $("#mh-x").val(),
+        Y : $("#mh-y").val(),
+        FID : $("#mh-fid").val(),
+        HOSPITAL_NAME : $("#mh-hname").val(),
+        HOSPITAL_TYPE : $("#mh-htype").val(),
+        HQ_ADDRESS :  $("#mh-hq-add").val(),
+        HQ_CITY:  $("#mh-hq-city").val(),
+        HQ_STATE :  $("#mh-hq-state").val(),
+        HQ_ZIP_CODE :   $("#mh-hq-zip").val(),
+        COUNTY_NAME :  $("#mh-county").val(),
+        STATE_NAME :  $("#mh-state").val(),
+        FIPS :  $("#mh-fips").val(),
+        //manage tab
+        NUM_LICENSED_BEDS :  $("#mh-beds").val(),
+        NUM_STAFFED_BEDS  :  $("#mh-st-beds").val(),
+        NUM_ICU_BEDS  :  $("#mh-icu-beds").val(),
+        ADULT_ICU_BEDS  :  $("#mh-aicu-beds").val(),
+        PEDI_ICU_BEDS : $("#mh-picu-beds").val(),
+        BED_UTILIZATION :  $("#mh-util").val(),
+        Potential_Increase_In_Bed_Capac : $("#mh-inc").val(),
+        AVG_VENTILATOR_USAGE  :  $("#mh-avg-vent").val()
+    }
+    $.ajax({
+      type : "PUT",
+      url : "/api/",
+      data : req_body,
+      dataType:"json",
+      async:false,
+      success: function(result){
+        //first empty dashboard========>
+        //these for profile
+        $("#mh-x").val("");
+        $("#mh-y").val("");
+        $("#mh-fid").val("");
+        $("#mh-hname").val("");
+        $("#mh-htype").val("");
+        $("#mh-hq-add").val("");
+        $("#mh-hq-city").val("");
+        $("#mh-hq-state").val("");
+        $("#mh-hq-zip").val("");
+        $("#mh-county").val("");
+        $("#mh-state").val("");
+        $("#mh-fips").val("");
+        //these for manage
+        $("#mh-beds").val("");
+        $("#mh-mh-st-beds").val("");
+        $("#mh-mh-icu-beds").val("");
+        $("#mh-aicu-beds").val("");
+        $("#mh-picu-beds").val("");
+        $("#mh-util").val("");
+        $("#mh-inc").val("");
+        $("#mh-avg-vent").val("");
+        //then append data=========>
+        //profile tab
+        $("#mh-x").val(result.X);
+        $("#mh-y").val(result.Y);
+        $("#mh-fid").val(result.FID);
+        $("#mh-hname").val(result.HOSPITAL_NAME);
+        $("#mh-htype").val(result.HOSPITAL_TYPE);
+        $("#mh-hq-add").val(result.HQ_ADDRESS);
+        $("#mh-hq-city").val(result.HQ_CITY);
+        $("#mh-hq-state").val(result.HQ_STATE);
+        $("#mh-hq-zip").val(result.HQ_ZIP_CODE);
+        $("#mh-county").val(result.COUNTY_NAME);
+        $("#mh-state").val(result.STATE_NAME);
+        $("#mh-fips").val(result.FIPS);
+        //manage tab
+        $("#mh-beds").val(result.NUM_LICENSED_BEDS);
+        $("#mh-st-beds").val(result.NUM_STAFFED_BEDS);
+        $("#mh-icu-beds").val(result.NUM_ICU_BEDS);
+        $("#mh-aicu-beds").val(result.ADULT_ICU_BEDS);
+        $("#mh-picu-beds").val(result.PEDI_ICU_BEDS)
+        $("#mh-util").val(result.BED_UTILIZATION);
+        $("#mh-inc").val(result.Potential_Increase_In_Bed_Capac);
+        $("#mh-avg-vent").val(result.AVG_VENTILATOR_USAGE);
+      },
+      error : function(e) {
+        //user interactive errors
+        console.log("ERROR: ", e);
+        console.log("FAILED");
+      }
+    });   
+  }
 
   function dbDataRetriever(){
     var var_name = firebase.database().ref().child("mongo_hospital");
   var_name.on("value", function(snapshot) {
- // snapshot mai se data nikal le pehle console . log karke dekh lena
   snapshot.forEach(function(childsnapshot){
     if(childsnapshot.val().user_id == firebase.auth().currentUser.uid){
       apiGet(childsnapshot.val().hos_id);
@@ -153,7 +238,73 @@
   });
 });
   }
+  function dbDataUpdater(){
+    var var_name = firebase.database().ref().child("mongo_hospital");
+  var_name.on("value", function(snapshot) {
+  snapshot.forEach(function(childsnapshot){
+    if(childsnapshot.val().user_id == firebase.auth().currentUser.uid){
+      apiUpdate(childsnapshot.val().hos_id);
+    }
+    });
+  })
+}
+  function editFix(){
+    console.log("Hello you submitted");
+  }
 
+  //======================DASHBOARD UTILITY================//
+
+  //================FOR MANAGE ==============//
+  $(document).ready(function(){
+    $('#ProfileSubmitBtnGrp').hide();
+    $('#ManageSubmitBtnGrp').hide();
+    
+    $('#EditManagePageBtn').click(function(){
+      $('input').attr('readonly',false);
+      $('#EditManagePageBtn').hide();
+      $('#ManageSubmitBtnGrp').show();
+  });
+    $('#submitmanagebtn').click(function(){
+      $('input').attr('readonly',true);
+      dbDataUpdater();
+      $('#EditManagePageBtn').show();
+      $('#ManageSubmitBtnGrp').hide();
+    })
+    $('#cancelmanagebtn').click(function(){
+      $('input').attr('readonly',true);
+      dbDataRetriever();
+      $('#EditManagePageBtn').show();
+      $('#ManageSubmitBtnGrp').hide();
+    })
+    $('#EditProfilePageBtn').click(function(){
+      $('input').attr('readonly',false);
+      $('#EditProfilePageBtn').hide();
+      $('#ProfileSubmitBtnGrp').show();
+  });
+    $('#submitprofilebtn').click(function(){
+      $('input').attr('readonly',true);
+      dbDataUpdater();
+      $('#EditProfilePageBtn').show();
+      $('#ProfileSubmitBtnGrp').hide();
+    })
+    $('#cancelprofilebtn').click(function(){
+      $('input').attr('readonly',true);
+      dbDataRetriever();
+      $('#EditProfilePageBtn').show();
+      $('#ProfileSubmitBtnGrp').hide();
+    })
+  })
+
+
+//Post login profile and manage property editing 
+  // $(document).ready(function(){
+
+  // });
+  // $('#EditProfilePageBtn').click(function(){
+  //   $('input').attr('readonly',false);
+  //   $('#EditProfilePageBtn').hide();
+  //   $('#ProfileSubmitBtnGrp').show();
+  // });
 
 
 </script>
