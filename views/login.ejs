@@ -132,86 +132,11 @@
         <br>
         Result : <div id="res" style="display: inline; color: orchid;">Pending</div>
       </div>
-      <div class="main-item" id="profile-page" style="display:none;">
-        <div class="ui header">PROFILE<button class="ui mini positive right floated button">EDIT</button></div>
-        <hr>
-        <form>
-          <div class="ui container">
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                X
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                Y
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                FID
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                Hospital Name
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                Hospital Type
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                HQ Address
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                HQ City
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                HQ State
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                HQ Zip Code
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                Country
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                State
-              </div>
-              <input type="text">
-            </div>
-            <div class="ui fluid labeled input">
-              <div class="ui basic label">
-                FIPS
-              </div>
-              <input type="text">
-            </div>
-          </div>
-        </form>
-      </div>
+      
+      <!-- //===============PROFILE HOSPITAL RENDERING TEMPLATE==============// -->
+      <%- include("./login-assets/profile") %>
+      <!-- //=============END OF PROFILE HOSPITAL TEMPLATE==============// -->
+
       <!-- //========= MANAGE HOSPITAL RENDERING TEMPLATE==============// -->
       <%- include("./login-assets/manage") %>
       <!-- //=============END OF MANAGE HOSPITAL TEMPLATE==============// -->
