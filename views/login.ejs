@@ -488,10 +488,10 @@ function remove_online(h){
         
         var item = childsnapshot.val();
         if(item.email == currentUser){
-          chatHTMLitem += '<div class="chat-container" style="text-align: right"><div class="chat-sender msg" style="background: indigo; max-width: max-content"><div class="chatmsg" style="float: none;"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div>';
+          chatHTMLitem += '<div class="chat" style="text-align: right" ><div class="ui compact green colored message"style="border-radius: 100px;"><i class="blue colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div>' +'<div class="ui hidden divider">' +'</div>';
         }
         else{
-          chatHTMLitem += '<div class="chat-container" ><div class="chat-respond msg" style="background: brown; max-width: max-content"><div class="flippd"><div class="chatmsg" style="float: none;"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div></div>';
+          chatHTMLitem += '<div class="chat" ><div class="ui compact blue colored message"style="border-radius: 100px;"><i class="red colored hospital symbol icon"></i>'+ item.email + " : "+item.message + '</div></div>'+'<div class="ui hidden divider">' +'</div>';
         }
         //document.getElementById('chat_input').value="";
         
