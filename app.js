@@ -4,8 +4,8 @@ var express = require("express"),
 	app = express(),
 	bodyParser = require("body-parser"),
 	mongoose = require("mongoose"),
-	pug = require("pug"),
-	sgMail = require('@sendgrid/mail'),
+	//pug = require("pug"),
+	nodemailer = require('nodemailer'),
 	Esri = require("./models/esri.js");
 
 //MIDDLEWARE for Authentication
@@ -210,7 +210,7 @@ app.post("/email",function(req,res){
 	var state = req.body.state;
 	var city = req.body.city;
 	var bg = req.body.bg;
-	console.log(email);
+	/*console.log(email);
 	sgMail.setApiKey("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");
 	const msg = {
 	to: email,
@@ -219,7 +219,29 @@ app.post("/email",function(req,res){
 	text: 'Dear '+name+', Your form has been successfully pushed into our database. It will expire in next 72 hours, hence take the required steps to comply with the same. The information that was pushed into this form : Age : <br>Gender : <br>Country : <br>State : <br>City : <br>Blood Group :'+ bg +' We will contact you @'+number+' in case of any emergency. Best Regards, Team BITSians ',
 	html: 'Dear '+name+',<br><br>Your form has been successfully pushed into our database. It will expire in next <strong>72 hours</strong>, hence take the required steps to comply with the same.<br><br>The information that was pushed into this form :<br><p>Age : '+age+'<br>Gender : '+gender+'<br>Country : '+country+'<br>State : '+state+'<br>City : '+city+'<br>Blood Group : '+ bg +'<br></p>We will contact you @'+number+' in case of any emergency.<br><br> Best Regards,<br> Team BITSians',
 	};
-	sgMail.send(msg);
+	sgMail.send(msg);*/
+	let transport = nodemailer.createTransport({
+		host: 'smtp.googlemail.com',
+          port: 465,
+          secure: true,
+		auth: {
+		  user: 'carequest69@gmail.com',
+		  pass: 'CareQuest@69'
+		}
+	});
+	const message1 = {
+		from: 'CareQuest <carequest69@gmail.com>', // Sender address
+		to: email,         // List of recipients
+		subject: 'CareQuest : Form Submission Success', // Subject line
+		html: 'Dear '+name+',<br><br>Your form has been successfully pushed into our database. It will expire in next <strong>72 hours</strong>, hence take the required steps to comply with the same.<br><br>The information that was pushed into this form :<br><p>Age : '+age+'<br>Gender : '+gender+'<br>Country : '+country+'<br>State : '+state+'<br>City : '+city+'<br>Blood Group : '+ bg +'<br></p>We will contact you @'+number+' in case of any emergency.<br><br> Best Regards,<br> Team CareQuest'// Plain text body
+	};
+	transport.sendMail(message1, function(err, info) {
+		if (err) {
+		  console.log(err)
+		} else {
+		  console.log(info);
+		}
+	});
 	res.render("common_pool");
 })
 
