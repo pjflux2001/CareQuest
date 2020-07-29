@@ -597,6 +597,15 @@ logoutBtn.addEventListener('click',()=>{
 });
 </script>
 <script>
+var enter_evt = document.getElementById("chat_input");
+enter_evt.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("chat_btn").click();
+    }
+});
+</script>
+<script>
    //WATSON GOES HERE
 </script>
 </body>
