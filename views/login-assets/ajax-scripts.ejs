@@ -113,4 +113,19 @@
       }
     });   
   }
+
+  function dbDataRetriever(){
+    var var_name = firebase.database().ref().child("mongo_hospital");
+  var_name.on("value", function(snapshot) {
+ // snapshot mai se data nikal le pehle console . log karke dekh lena
+  snapshot.forEach(function(childsnapshot){
+    if(childsnapshot.val().user_id == firebase.auth().currentUser.uid){
+      apiGet(childsnapshot.val().hos_id);
+    }
+  });
+});
+  }
+
+
+
 </script>

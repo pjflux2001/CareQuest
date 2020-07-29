@@ -365,6 +365,7 @@ function toggle_status(){
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
+      dbDataRetriever();//This function brings data from mongo
   
       document.getElementById("user_div").style.display = "block";
       document.getElementById("login_div").style.display = "none";
