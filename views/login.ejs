@@ -473,8 +473,9 @@ function remove_online(h){
     
   add_chat(message);
   cnt++
-     //document.getElementById("chat_input").value = "";
-
+     document.getElementById("chat_input").value = "";
+     window.scrollBy(0,100);
+  
      
  });
 
@@ -492,7 +493,7 @@ function remove_online(h){
         else{
           chatHTMLitem += '<div class="chat-container" ><div class="chat-respond msg" style="background: brown; max-width: max-content"><div class="flippd"><div class="chatmsg" style="float: none;"><i class="green colored user md icon"></i>'+ item.email + " : "+item.message + '</div></div></div></div>';
         }
-        document.getElementById('chat_input').value="";
+        //document.getElementById('chat_input').value="";
         
 
     });
