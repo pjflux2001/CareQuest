@@ -334,7 +334,7 @@
             var foundArr = <%- JSON.stringify(foundArr) %>;
              console.log(foundArr.length);
             document.getElementById("status").innerHTML = "Processing Data Points . . .";
-            for(i=0;i<=9999;i++){
+            for(i=0;i<=500*map.getZoom();i++){
                 if(i!=4281){
                     
                 let Pos = {lat: foundArr[i].Y , lng: foundArr[i].X };
