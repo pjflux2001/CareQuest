@@ -1,4 +1,3 @@
-document.getElementById("common-pool").classList.add("active")
 
 var adddonorref = firebase.database().ref().child("donor");
 adddonorref.on("value", function(snapshot) {
