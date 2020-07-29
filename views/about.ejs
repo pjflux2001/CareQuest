@@ -5,7 +5,7 @@
         </h1>
         <p class="pretty">A Load Balancer for Medical Faciliities</p>
         <a href="/map" class="ui massive basic inverted animated button">
-            <div class="visible content">Get Started</div>
+            <div class="visible content">CareCount</div>
             <div class="hidden content">
               <i class="right arrow icon"></i>
             </div>    
@@ -15,7 +15,13 @@
           <div class="hidden content">
             <i class="down arrow icon"></i>
           </div>            
-	      </a>
+        </a>
+        <a href="" class="ui massive basic inverted animated button">
+          <div class="visible content">Mission</div>
+          <div class="hidden content">
+            <i class="down arrow icon"></i>
+          </div>            
+        </a>
     </div>
 </div>
 <!-- Service Introduction -->
@@ -243,60 +249,50 @@
     </div>
   </div>    
 </div>
-
-
-<!--
-<h1 class="ui centered header" style="font-size: 3em;">Project Features</h1>
 <br>
-<div class="ui middle aligned stackable grid container">
-  <div class="two column row">
-    <div class="ten wide column">
-      <div class="ui relaxed items">
-        <div class="item">
-          <div class="middle aligned content">
-            <div class="header">Information Provider</div>
-            <div class="description">CareQuest
-   provides relevant information like number of ICU beds, ventilator equipped beds and many more. This allows user to make an informed decision while chosing a Hospital</div>
-          </div>
+<!-- Footer Segment -->
+<div class="ui inverted vertical footer segment" data-aos="fade-up" data-aos-easing="ease-in-sine">
+  <div class="ui container">
+    <div class="ui stackable inverted divided equal height stackable grid">
+      <div class="eight wide centered column">
+        <img class="ui medium image" src="https://i.ibb.co/ZW161BF/output-onlinepngtools-1.png"> 
+      </div>
+      <div class="three wide column">
+        <h4 class="ui inverted header">About</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">Home</a>
+          <a href="#" class="item">CareBoard</a>
+          <a href="#" class="item">Contact Us</a>
+          <a href="#" class="item">Mission</a>
         </div>
-        <br>
-        <div class="item">
-          <div class="middle aligned content">
-            <div class="header">Load Balancer</div>
-            <div class="description">CareQuest
-   provides utilization value for each registered hospital. Based on this utilization value, dynamic map provides nearby hospitals and recommends hospitals based on distance, travelling time and utilization value. Our attempt is to reduce patient inflow to hospitals with high utilization value. </div>
+      </div>
+      <div class="three wide column">
+        <h4 class="ui inverted header">Services</h5>
+        <div class="ui inverted link list">
+          <a href="#PlasmaBankInfo" class="item">Plasma Bank</a>
+          <a href="#TrackABedInfo" class="item">Track A Bed</a>
+          <a href="#CareNetInfo" class="item">CareNet</a>
+        </div>  
+        <div class="ui black inverted segment">
+          <div class="ui vertical inverted list">
+            <div class="item">
+              <div class="ui horizontal inverted link list">
+                <a href="#" class="item"><i class="github icon"></i></a>
+                <a href="#" class="item"><i class="envelope icon"></i></a>
+                <a href="#" class="item"><i class="youtube icon"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <h6 class="ui header">Copyright <i class="copyright icon"></i> Team BITSians 2020</h5>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="right floated center aligned six wide column">
-      <img src="https://pngimage.net/wp-content/uploads/2018/06/hopital-png-5.png" style="height:40vh;">
-    </div>
   </div>
-  <div class="row"></div>
-  <div class="one column centered row">
-    <div class="ten wide column">
-      <div class="ui items">
-        <div class="item">
-          <div class="image">
-            <img src="https://www.freepngimg.com/download/map/62663-vector-map-google-center-icons-maps-computer.png" style="height:30vh;width:auto;">
-          </div>
-          <div class="middle aligned content">
-            <div class="header">Dynamic Routing</div>
-            <div class="description">Using Here:Maps API, CareQuest
-   highlights hospitals nearby along with that hospital's information. It also provides routing options along with advance search feature to get most suitable available option.  </div>
-          </div>
-        </div>
-      </div>
-    </div>  
-  </div>
-
 </div>
--->
+
 <script> 
 document.getElementById("about").classList.add("active"); 
-$('.ui.accordion')
-  .accordion()
-;
 </script>
 <%- include("./partials/footer") %>
