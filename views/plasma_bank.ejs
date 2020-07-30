@@ -8,13 +8,13 @@
     <div id="parallax-world-of-ugg">
   
         <section>
-          <div class="container">
+          <div class="container py-3">
             <div class="title">
               <div class="row">
                 <div class="text-center d-none d-sm-block col-md-12">
                   <h3>Let's help the community</h3>
                 </div>
-                <div class="text-center col-12 pt-2">
+                <div class="text-center col-12 pt-3">
                   <h1>THE PLASMA BANK</h1>
                 </div>
               </div>
@@ -24,26 +24,43 @@
         
         <section>
             <div class="parallax-one">
-              <h2>OUR MISSION</h2>
+              <h2>PLASMA FORMS</h2>
             </div>
         </section>
         
         <section>
           <div class="block">
-            <p><strong>Situation : </strong>COVID-19 has been on a rampage all across the globe since the past 5 months. From less than a million cases in February, and currently having more than 10 million cases across the globe. 
+                <!--forms-->
+    <div class="container my-2" style="min-height: 20rem;">
+      <div class="row py-5 align-items-center">
+          <div class="col-12 col-sm-6">
+            <div class="text-center text-success pb-4 display-4"><b>Are You A Plasma Donor ?</b></div>
+            <a class="btn btn-outline-success text-dark shadow" href="form_donor">Plasma Donor</a>
+          </div>
+          <div class="col-12 col-sm-6">
+            <div class="text-center text-danger pb-4 display-4"><b>Are You A Plasma Patient ?</b></div>
+            <a class="btn btn-outline-danger text-dark shadow" href="form_patient">Plasma Receiver</a>
+          </div>
+      </div>
+    </div>
+          </div>
+        </section>
 
-              The good news is that doctors across the globe have been able to recover more than 5 million COVID patients, with a loss of less than half a million souls. These patients can help improve the recovery rate by donating their plasma.
-              
-              With a vaccine still a long way away, plasma therapy has been developed as an experimental cure for COVID. Plasma therapy has been helping a lot of families recover their loved ones from COVID.
-              <br><br>
-              <strong>But since there are very few plasma donors currently, a lot of people who can be saved using this therapy are not getting the required treatment.</strong>
-              </p>
-            <p class="line-break margin-top-10"></p>
-            <p class="margin-top-10">For the last few weeks, we have witnessed a flood of heart-wrenching posts on social media platforms from people looking for life-saving plasma for their loved ones. <strong>Hospitals simply do not have enough.</strong> 
-              <br><br>
-              <strong>Mission : </strong> Our aim is to match COVID recovered individuals with patients who are in need of plasma therapy. The Plasma Bank is a small step towards solving the problem of finding eligible donors in a situation where time is of great essence. 
-              
-              We sincerely hope you or your loved ones never have to go through this ordeal. But if you do, then we aspire to be able to help you by connecting you with volunteer donors. </p>
+        <section>
+          <div class="parallax-three">
+            <h2>SEARCHING FOR PLASMA</h2>
+          </div>
+        </section>     
+        <section>
+          <div class="block">
+            <div class="container my-2" style="min-height: 20rem;">
+            <div class="row justify-content-center py-5">
+            <div class="col-12 col-sm-6 text-center">
+              <div class="text-center text-warning pb-4 display-4"><b>Are You A Plasma Seeker ?</b></div>
+              <a class="btn btn-outline-warning text-dark shadow" href="common_pool">Plasma Accounts</a>
+            </div>
+            </div>
+            </div>
           </div>
         </section>
         
@@ -57,8 +74,8 @@
           <div class="block">
           <div class="container">
             <div class="row">
-              <div class="d-none d-sm-block col-12">
-                <h4><i class="large question circle outline icon"></i><storng>Frequently Asked Questions</storng></h4>
+              <div class="d-none d-sm-block col-12  text-primary">
+                <h4><i class="large question circle outline icon"></i><b>Frequently Asked Questions</b></h4>
               </div>
               <div class="d-block d-sm-none col-12">
                 <h5><i class="large question circle outline icon"></i><storng><small>Frequently Asked Questions</small></storng></h5>
@@ -227,25 +244,7 @@
             </div>
         </section>
         
-        <section>
-          <div class="parallax-three">
-            <h2>HOW CAN WE HELP</h2>
-          </div>
-        </section>
-        
-        <section>
-    <!--forms-->
-    <div class="container my-2" style="min-height: 20rem;">
-      <div class="row py-5">
-          <div class="col-12 col-sm-6">
-            <a class="btn btn-outline-success text-dark shadow" href="form_donor">Plasma Donor</a>
-          </div>
-          <div class="col-12 col-sm-6">
-            <a class="btn btn-outline-danger text-dark shadow" href="form_patient">Plasma Receiver</a>
-          </div>
-      </div>
-  </div>
-    </section>
+
 
      <!--footer-->
      <footer class="sticky-footer text-center border py-5" style="min-height: 15rem;">
@@ -266,7 +265,6 @@
 
         <link rel="stylesheet" href="plasma_bank.css"> 
         <%- include("./partials/footer") %>
-        <script>document.getElementById("plasma-bank").classList.add("active")
         </script>
        
       <!-- Bootstrap 4.5 JS, Popper.js, and jQuery -->
