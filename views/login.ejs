@@ -549,7 +549,7 @@ fileBtn.addEventListener('change',function(e) {
         Tesseract.recognize(
           loc,
             'eng',
-            { logger: m => console.log(m) }
+            { logger: m => document.getElementById("percentage").innerHTML =  '<progress value="'+ m.progress*100 +'" max="100" id="uploader">0%</progress>' }
           ).then(({ data: { text } }) => {
             document.getElementById('analysis').innerHTML = text;
             if(text.search("Hospital") < 0 && text.search("hospital") < 0 && text.search("HOSPITAL") < 0){
