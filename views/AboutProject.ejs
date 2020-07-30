@@ -1,0 +1,300 @@
+<%- include("./partials/header") %>
+<div class="ui container">
+  <br><br><br><br><br>
+  <div class="ui stackable grid" >
+    <div class="row" style="display:flex;align-items: center;">
+      <div class="ten wide column">
+        <div class="ui relaxed horizontal list">
+          <div class="item">
+            <img class="ui tiny image" src="data:image/png;base64,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">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="data:image/png;base64,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">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://www.kindpng.com/picc/m/67-678384_transparent-javascript-icon-png-png-download.png">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="data:image/png;base64,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">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://upload.wikimedia.org/wikipedia/en/0/00/IBM_Watson_Logo_2017.png">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="data:image/png;base64,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">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://i7.pngguru.com/preview/241/983/651/mongodb-nosql-database-computer-icons-others.jpg">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://cdn.dribbble.com/users/528264/screenshots/3140440/firebase_logo.png">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://3.bp.blogspot.com/-uPlHNrcPjt8/UKO8wh-oqZI/AAAAAAAAPsc/wBSnLzC4mhw/s1600/Here+logo+2012.png">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/JQuery_logo-512.png">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://s.gravatar.com/avatar/250b202f75684bf6916f5c5888b1eaab?size=496&default=retro">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://1.cms.s81c.com/sites/default/files/2019-02-25/1_SendGrid-Logomark.png">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://4.bp.blogspot.com/-xkADMmGFhO0/XHqzNsiEeMI/AAAAAAAAIOM/oLZnRiMJaj0fjNxbrBsPV5n0rkiTdhaIgCLcBGAs/s1600/aos.png">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tesseract_game_logo.svg/1024px-Tesseract_game_logo.svg.png">
+          </div>
+          <div class="item">
+            <img class="ui tiny image" src="data:image/png;base64,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">
+          </div>
+        </div>
+      </div>
+      <div class="six wide column">
+        <h1 class="ui huge header" style="font-family: Arial, Helvetica, sans-serif;" >A few things we're great at</h1>
+        <div class="meta">
+        <h3 class="ui header" style = "font-family:'Montserrat', sans-serif;"><i>“LIFE IS A JOURNEY, NOT A DESTINATION.”</i></h3>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="display:flex;align-items: center;">  
+      <div class="sixteen wide column">
+        <h1 class="ui center aligned header" style="font-size: 3em;margin-top: 10vh;">A note from developers</h1>
+        <p style="text-align: center;font-size: 20px;">We are just some random teens interested in UI/UX Designs and Building web apps with beautiful interface.</p>
+        <!-- About Developers -->
+        <div class=" ui container">
+          <br>
+                <div class="ui divided items">
+                    <div class="item">
+
+                      <div class="content">
+                        <a class="header">Sudhanshu Mohan Kashyap</a>
+                        <div class="ui small circular left floated image">
+                            <img src="https://avatars0.githubusercontent.com/u/44811918?s=460&u=953f701cf19a5537b6c6ac57f1a5209e395bb6c9&v=4">
+                          </div>
+                        <div class="meta">
+                          <span class="dark">Electrical & Electronics Major at BITS Pilani</span>
+                        </div>
+                        <div class="description">
+                        <p><i>"I am mainly interested in building beautiful UI/UX Interfaces."</i>
+                            I started out as cybersecurity enthusiast but later got interested in web development. Since then i am constantly developing and deploying webapps.
+                        </p>
+                        </div>
+                        <div class="extra ">
+                          <button class="ui inverted mini red button">Python</button>
+                          <button class="ui inverted mini red button">Javascript</button>
+                          <button class="ui inverted mini red button">NodeJS</button>
+                          <button class="ui inverted mini red button">MongoDB</button>
+                          
+                          
+                                            
+                          <div class="left floated">
+                            <a href="https://github.com/mightyjoe781"><i class="large github icon"></i></a>
+                            <a href="mailto:f20180319@goa.bits-pilani.ac.in"><i class="large envelope outline icon"></i></a>
+                            <a href="https://www.facebook.com/sudhanshu.mohan.smk"><i class="large facebook icon"></i></a>
+                            <a href="https://www.linkedin.com/in/sudhanshu-mohan-kashyap-60458518a/"><i class="large linkedin alternate icon "></i></a>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+          
+                    <div class="item">
+                        <div class="content">
+                          <a class="header">Prashant Ramesh Jha</a>
+                          <div class="ui small circular right floated image">
+                            <img src="https://scontent.fixc4-1.fna.fbcdn.net/v/t1.0-9/48387814_100321644365933_2165336255091441664_n.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=0IkBORb_AxAAX-FzNoS&_nc_ht=scontent.fixc4-1.fna&oh=8e8dba8f25dc3a5eed78581f438866a2&oe=5F47DB11">
+                          </div>
+                          <div class="meta">
+                            <span class="dark">Electronics & Communications Major at BITS Pilani</span>
+                          </div>
+                          <div class="description">
+                          <p><i>"I am an innovator, always looking forward to build scalable solutions."</i>
+                              Started with web applications, but now looking forward to software development. Solving problems is my passion, not hobby.
+                          </p>
+                          </div>
+                          <div class="extra">
+                            <button class="ui inverted mini blue button">Python</button>
+                            
+                            <button class="ui inverted mini blue button">HTML</button>
+                            <button class="ui inverted mini blue button">CSS</button>
+                            <button class="ui inverted mini blue button">Javascript</button>
+                            <button class="ui inverted mini blue button">PHP</button>
+                            
+                        <div class="right floated">
+                        <a href="https://github.com/pjflux2001"><i class="large github icon"></i></a>
+                              <a href="mailto:f20180332@goa.bits-pilani.ac.in"><i class="large envelope outline icon"></i></a>
+                              <a href="https://www.facebook.com/pj.flux"><i class="large facebook icon"></i></a>
+                              <a href="https://www.linkedin.com/in/prashant-jha-22b1671a5/"><i class="large linkedin alternate icon "></i></a>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="item">
+
+                  <div class="content">
+                    <a class="header">Apoorv Garg</a>
+                    <div class="ui small circular left floated image">
+                        <img src="https://scontent.fixc4-1.fna.fbcdn.net/v/t1.0-9/67139441_2378805452210162_7327534289413734400_o.jpg?_nc_cat=107&_nc_sid=09cbfe&_nc_ohc=pUMyq_599LsAX-a4K03&_nc_ht=scontent.fixc4-1.fna&oh=0c56b62ed568059d6e503f9dbba843d1&oe=5F49B183">
+                      </div>
+                    <div class="meta">
+                      <span class="dark">Computer Science and Mathematics Major at BITS Pilani</span>
+                    </div>
+                    <div class="description">
+                    <p><i>"Interested in Web-App Development and Machine Learning."</i>
+                      I am a third yearite exploring different interests like machine learning and UI development. I have just started my UI journey and am excited to learn more.
+                    </p>
+                    </div>
+                    <div class="extra">
+                      
+                      <button class="ui inverted mini green button">Python</button>
+                      
+                      <button class="ui inverted mini green button">HTML</button>
+                      <button class="ui inverted mini green button">CSS</button>
+                      <button class="ui inverted mini green button">Javascript</button>
+                      <button class="ui inverted mini green button">Matlab</button>
+                      
+                                        
+                      <div class="left floated">
+                        <a href="https://github.com/ApEdu"><i class="large github icon"></i></a>
+                        <a href="mailto:gargapoorv12@gmail.com"><i class="large envelope outline icon"></i></a>
+                        <a href="https://www.facebook.com/garg.apoorv12"><i class="large facebook icon"></i></a>
+                        <a href="https://www.linkedin.com/in/apoorv-garg-a64891190"><i class="large linkedin alternate icon "></i></a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="item">
+                  <div class="content">
+                    <a class="header">Umang Barthwal</a>
+                    <div class="ui small circular right floated image">
+                      <img src="https://media-exp1.licdn.com/dms/image/C5103AQGa0-MQKC_tRw/profile-displayphoto-shrink_400_400/0?e=1600905600&v=beta&t=k10FcRp1-dym7YzPJ1k9RwBqkMLyOPq2imxa6H0CYj8">
+                    </div>
+                    <div class="meta">
+                      <span class="dark">Computer Science & Physics Major at BITS Pilani</span>
+                    </div>
+                    <div class="description">
+                    <p><i>"I am an Open-Source Contributor. Interested in Web-app Development and Relativistic Physics"</i>
+                      Started my journey with simple python programs and models. Now exploring the field of development.
+                    </p>
+                    </div>
+                    <div class="extra">
+                      <button class="ui inverted mini brown button">Python</button>
+                      <button class="ui inverted mini brown button">C++</button>
+                      <button class="ui inverted mini brown button">Javascript</button>
+                      <button class="ui inverted mini brown button">.NETCore</button>
+                      <button class="ui inverted mini brown button">MySQL</button>
+                      
+                  <div class="right floated">
+                  <a href="https://github.com/barthwalumang"><i class="large github icon"></i></a>
+                        <a href="mailto:barthwalumang@gmail.com"><i class="large envelope outline icon"></i></a>
+                        <a href="https://www.facebook.com/barthwal.umang.96/"><i class="large facebook icon"></i></a>
+                        <a href="https://www.linkedin.com/in/barthwalumang/"><i class="large linkedin alternate icon "></i></a>
+                  </div>
+
+                  </div>
+              </div>
+          </div>
+          
+          <div class="item">
+
+            <div class="content">
+              <a class="header">Aayush Kaushal</a>
+              <div class="ui small circular left floated image">
+                  <img src="https://media-exp1.licdn.com/dms/image/C5603AQGg0bzLCz_NKQ/profile-displayphoto-shrink_200_200/0?e=1601510400&v=beta&t=fA2HenTHnhHICvXlqhj1xyvnauZBZ-mH6iltculhJ8E">
+                </div>
+              <div class="meta">
+                <span class="dark">Computer Science and Mathematics Major at BITS Pilani</span>
+              </div>
+              <div class="description">
+              <p><i> "Interested in Web-App Development and Artificial Intelligence." </i>
+                My specialty includes problem-solving, quickly learning new skills, and programming languages. I enthusiastically grab onto any programming language, framework.
+              </p>
+              </div>
+              <div class="extra">
+                <button class="ui inverted mini yellow button">Python</button>
+                <button class="ui inverted mini yellow button">C++</button>
+                <button class="ui inverted mini yellow button">HTML</button>
+                <button class="ui inverted mini yellow button">CSS</button>
+                <button class="ui inverted mini yellow button">Javascript</button>
+                      
+                
+                                  
+                <div class="left floated">
+                  <a href="https://github.com/Aayush-7"><i class="large github icon"></i></a>
+                  <a href="mailto:f20180838@goa.bits-pilani.ac.in"><i class="large envelope outline icon"></i></a>
+                  <a href="https://www.facebook.com/aayush.kaushal.359/"><i class="large facebook icon"></i></a>
+                  <a href="https://www.linkedin.com/in/aayush-kaushal-6a6289190/?originalSubdomain=in"><i class="large linkedin alternate icon "></i></a>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+                  
+
+            </div>
+            <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer Segment -->
+<div class="ui inverted vertical footer segment" data-aos="fade-up" data-aos-easing="ease-in-sine">
+  <div class="ui container">
+    <div class="ui stackable inverted divided equal height stackable grid">
+      <div class="eight wide centered column">
+        <img class="ui medium centered image" src="https://i.ibb.co/ZW161BF/output-onlinepngtools-1.png"> 
+      </div>
+      <div class="three wide column">
+        <h4 class="ui inverted header">About</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">Home</a>
+          <a href="#" class="item">Dashboard</a>
+          <a href="/contact" class="item">Contact Us</a>
+          <a href="#Mission" class="item">Mission</a>
+        </div>
+      </div>
+      <div class="three wide column">
+        <h4 class="ui inverted header">Services</h5>
+        <div class="ui inverted link list">
+          <a href="#PlasmaBankInfo" class="item">Plasma Bank</a>
+          <a href="#TrackABedInfo" class="item">Track A Bed</a>
+          <a href="#CareNetInfo" class="item">CareNet</a>
+        </div>  
+        <div class="ui black inverted segment">
+          <div class="ui vertical inverted list">
+            <div class="item">
+              <div class="ui horizontal inverted link list">
+                <a href="#" class="item"><i class="github icon"></i></a>
+                <a href="#" class="item"><i class="envelope icon"></i></a>
+                <a href="#" class="item"><i class="youtube icon"></i></a>
+              </div>
+            </div>
+            <div class="item">
+              <h6 class="ui header">Copyright <i class="copyright icon"></i> Team BITSians 2020</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script> document.getElementById("technology").classList.add("active"); </script>
+<%- include("./partials/footer") %>
+      
+
+
+      
+
+
+      
+
+      

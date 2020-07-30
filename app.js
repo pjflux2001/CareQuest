@@ -57,11 +57,8 @@ app.get("/map",function(req,res){
 		}
 	}).limit(10000);
 	});
-app.get("/technology",function(req,res){
-	res.render("technology.ejs");
-});
-app.get("/contact",function(req,res){
-	res.render("contact.ejs");
+app.get("/AboutProject",function(req,res){
+	res.render("AboutProject.ejs");
 });
 app.get("/login",function(req,res){
 	res.render("login.ejs");
