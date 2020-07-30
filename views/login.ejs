@@ -535,6 +535,8 @@ fileBtn.addEventListener('change',function(e) {
     var anal_div = document.getElementById('analysis');
     task.on('state_changed',
       function progress(snapshot){
+        document.getElementById('uploader').style.display = "inline"
+        document.getElementById('chs').style.display = "none"
         var percentage = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
         uploader.value = percentage;
       },
@@ -550,9 +552,11 @@ fileBtn.addEventListener('change',function(e) {
         Tesseract.recognize(
           loc,
             'eng',
-            { logger: m => document.getElementById("percentage").innerHTML =  '<progress value="'+ m.progress*100 +'" max="100" id="uploader">0%</progress>' }
+            { logger: m => {document.getElementById('analysis').innerHTML = " "+m.status;
+            document.getElementById("percentage").innerHTML =  '<progress value="'+ m.progress*100 +'" max="100" id="uploader">0%</progress>'} }
           ).then(({ data: { text } }) => {
-            document.getElementById('analysis').innerHTML = text;
+            //document.getElementById('analysis').innerHTML = text;
+            document.getElementById('analysis').innerHTML = "text processed"
             if(text.search("Hospital") < 0 && text.search("hospital") < 0 && text.search("HOSPITAL") < 0){
                 document.getElementById('res').innerHTML = "Failed!";
                 document.getElementById('res').style.color = "red";
