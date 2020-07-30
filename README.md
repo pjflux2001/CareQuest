@@ -43,7 +43,7 @@ CareQuest aims to bring order to the chaos caused by COVID-19. To do so, CareQue
 
 ## The architecture
 
-<p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/architecture.png?raw=true" width = "50%" height = "50%"></p>
+<p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/architecture.png?raw=true"></p>
 
 1. The user navigates to the site and uploads a video file.
 2. Watson Speech to Text processes the audio and extracts the text.
