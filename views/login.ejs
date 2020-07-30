@@ -320,6 +320,7 @@ function create_account(){
     user.sendEmailVerification().then(function() {
       // Email sent.
       window.alert("Verification Sent! Check your email!");
+      document.getElementById("togl").style.visibility="hidden";
     }).catch(function(error) {
       // An error happened.
       window.alert("Err!");
