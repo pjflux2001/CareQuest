@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache2-red.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Website](https://img.shields.io/badge/View-Website-blue)](https://care-quest.herokuapp.com/)
 
-A basic GitHub repository example for Call for Code submissions and those projects that join the Code and Response initiative. Not all sections or files are required. You can make this as simple or as in-depth as you need.
+<strong>A platform to bring order to chaos caused by COVID-19</strong>
 
 ## Contents
 
@@ -27,15 +27,15 @@ A basic GitHub repository example for Call for Code submissions and those projec
 
 ### What's the problem?
 
-Part of the World Health Organization's guidance on limiting further spread of COVID-19 is to practice social distancing. As a result, schools in most affected areas are taking precautionary measures by closing their facilities. With school-aged children at home for an indeterminate amount of time,  keeping them engaged, entertained, and on top of their education is important.
+COVID-19 has been on a rampage all across the globe since the past 5 months. From less than a million cases in February, and currently having more than 10 million cases across the globe. This has caused widespread panic and disorder. This panic is interfaring with not only the functioning of already established medical structure but also allocation of resources which can cost someone's life.
 
 ### How can technology help?
 
-Schools and teachers can continue to engage with their students through virtual classrooms, and even create interactive spaces for classes. As parents face a new situation where they may need to homeschool their children, finding appropriate online resources is important as well.
+With increasing reach of technology, relevant information can be extracted from concerned authorities. This information can be used in resource allocation to balance load on various authorities. Providing information can keep people informed about the current scenario and have a calming effect.
 
 ### The idea
 
-It's imperative that learning and creating can continue when educational institutions have to shift the way they teach in times of crises, such as the COVID-19 pandemic. Providing a set of open source tools, backed by IBM Cloud and Watson Services, will enable educators to more easily make content available for their students.
+CareQuest aims to bring order to the chaos caused by COVID-19. To do so, CareQuest Services extracts information from its custom network of registered hospitals and government sources which is used in resource allocation and service recommendation with the aim of load balancing.
 
 ## Demo video
 
@@ -134,7 +134,7 @@ You can find a running system to test at [callforcode.mybluemix.net](http://call
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [here](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
@@ -142,9 +142,13 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Prashant Jha** - *Backend* - [pjflux2001](https://github.com/pjflux2001)
+* **Sudhanshu Mohan Kashyap** - *Backend And Frontend* - [mightyjoe781](https://github.com/mightyjoe781)
+* **Umang Barthwal** - *Backend And Frontend* - [barthwalumang](https://github.com/barthwalumang)
+* **Apoorv Garg** - *Frontend* - [ApEdu](https://github.com/ApEdu)
+* **Aayush Kaushal** - *Frontend* - [Aayush-7](https://github.com/Aayush-7)
 
-See also the list of [contributors](https://github.com/Code-and-Response/Project-Sample/graphs/contributors) who participated in this project.
+See also the list of [contributors]() who participated in this project.
 
 ## License
 
