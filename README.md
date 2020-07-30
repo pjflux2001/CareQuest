@@ -43,7 +43,7 @@ CareQuest aims to bring order to the chaos caused by COVID-19. To do so, CareQue
 
 ## The architecture
 
-![Video transcription/translation app](https://developer.ibm.com/developer/tutorials/cfc-starter-kit-speech-to-text-app-example/images/cfc-covid19-remote-education-diagram-2.png)
+<p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/architecture.png?raw=true" width = "50%" height = "50%"></p>
 
 1. The user navigates to the site and uploads a video file.
 2. Watson Speech to Text processes the audio and extracts the text.
