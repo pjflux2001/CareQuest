@@ -241,6 +241,12 @@
   }
 
   //======================DASHBOARD UTILITY================//
+  function createHospital(){
+      //testing id - 5f1ff6422735334c686b92e3
+    console.log("HI THERE");
+  
+  }
+
 
   //================FOR MANAGE ==============//
   $(document).ready(function(){
@@ -295,7 +301,7 @@ $('#dash-handle')
 //===============THIS SET RUNS AFTER AUTH STATE CHANGE ONLY ===============//
 function  testRedirect(){
     if(firebase.auth().currentUser.emailVerified){
-        window.location.href = "/test";
+      $("#test-page").attr('style','display:block;');
     }
     else {
         alert("Verify your Email first!");
@@ -303,6 +309,27 @@ function  testRedirect(){
 }
 
 //========================
+    //Search Display Logic
+    function searchDisplay(){
+      if ($("#choice-segment-2").css("display") == "block"){
+        $('#choice-segment-2').transition("scale","1000ms");
+        $('#choice-segment-1').transition("scale","1000ms");
+      } else {
+        $('#choice-segment-1').transition("scale");
+      }
+    }
+  
+    function addDisplay(){
+      if ($("#choice-segment-1").css("display") == "block"){
+        $('#choice-segment-1').transition("scale","1000ms");
+        $('#choice-segment-2').transition("scale","1000ms");
+      } else {
+        $('#choice-segment-2').transition("scale");
+      }
+    }
+    $('i').popup();
+
+
 
 
 </script>
