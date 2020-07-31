@@ -254,8 +254,10 @@ function toggle_status(){
   
         if(email_verfied){
           document.getElementById("verify_btn").style.display = "none";
+          document.getElementById("togl").style.display = "none";
         }else{
           document.getElementById("verify_btn").style.display = "block";
+          document.getElementById("togl").style.display = "block";
         }
         document.getElementById("user_para").innerHTML = "User : " + email_id + "<br> Verfied : " + email_verfied;
   
