@@ -526,7 +526,8 @@ function remove_online(h){
  chatonref.on("value", function(snapshot) {
       
       var chatHTMLitem="";
-      var currentUser = firebase.auth().currentUser.email;
+      if(firebase.auth().currentUser!=null)
+        var currentUser = firebase.auth().currentUser.email;
       snapshot.forEach(function(childsnapshot){
         
         var item = childsnapshot.val();
