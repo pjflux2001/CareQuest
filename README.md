@@ -65,16 +65,16 @@ These instructions will get you a copy of the project up and running on your loc
         
 Step 1 : Download and Install NodeJS and NPM packages from nodejs.org, or just use the following commands in your terminal window :
         
-                        ```sudo apt-get install nodejs
-                        sudo apt-get install npm```
+                        sudo apt-get install nodejs
+                        sudo apt-get install npm
                                                                                
 Step 2 : Install the http-server package from npm. Use the following command in your command prompt or terminal window :
-        
-                        ```npm install -g http-server```
+       
+                        npm install -g http-server
                 
 Step 3 : Navigate to the project directory using the command line interface and use :
                 
-                        ```node app.js```
+                        node app.js
                         
 Step 4 : Now, open your browser and navigate to http://localhost:31000/ to access the project.
         
