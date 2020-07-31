@@ -330,6 +330,15 @@ function create_account(){
       window.alert("Err!");
     });
     
+
+    if(firebase.auth().currentUser.emailVerified){
+          document.getElementById("verify_btn").style.display = "none";
+          document.getElementById("togl").style.display = "none";
+        }else{
+          document.getElementById("verify_btn").style.display = "block";
+          document.getElementById("togl").style.display = "block";
+        }
+    
   
   
   }
