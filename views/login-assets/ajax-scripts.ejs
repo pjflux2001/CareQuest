@@ -217,7 +217,7 @@
   var_name.on("value", function(snapshot) {
   snapshot.forEach(function(childsnapshot){
     if(childsnapshot.val().user_id == firebase.auth().currentUser.uid){
-      apiGet(childsnapshot.val().hos_id);
+      apiGet(childsnapshot.val().object_id);
     }
   });
 });
@@ -227,7 +227,7 @@
   var_name.on("value", function(snapshot) {
   snapshot.forEach(function(childsnapshot){
     if(childsnapshot.val().user_id == firebase.auth().currentUser.uid){
-      apiUpdate(childsnapshot.val().hos_id);
+      apiUpdate(childsnapshot.val().object_id);
     }
     });
   })
@@ -281,14 +281,18 @@
 
 //=======================
 //TEST PAGE REDIRECTING BUT BEFORE CHECKING ITS A VERIFIED EMAIL OR NOT
+$('#dash-handle')
+  .popup({
+    inline     : true,
+    on: 'hover',
+  });
 
-function testPage(){
-  if(firebase.auth().currentUser.emailVerified){
-  console.log("Huh you look verified");
-  }
-  else {
-    console.log("Verify Email First!");
-  }
+
+//===============THIS SET RUNS AFTER AUTH STATE CHANGE ONLY ===============//
+function  testRedirect(){
+
+        window.location.href = "http://localhost:31000/test";
+
 }
 
 //========================
