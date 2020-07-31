@@ -222,6 +222,7 @@
       apiGet(childsnapshot.val().object_id);
       OCRStatus(childsnapshot.val().id_verif);
       hospitalStatus(childsnapshot.val().object_id); //==THIS IS FOR WARNINNG BEFORE CREATING NEW FORM
+      // OCRStatus(childsnapshot.val().id_verif);
     }
   });
 });
@@ -248,7 +249,7 @@
       var req_body = {
         X : $("#cr-x").val(),
         Y : $("#cr-y").val(),
-        FID : $("#cr-fid").val(),
+        FID :  Math.random() * (999999 - 10000) + 10000, //$("#cr-fid").val(),
         HOSPITAL_NAME : $("#cr-hname").val(),
         HOSPITAL_TYPE : $("#cr-htype").val(),
         HQ_ADDRESS :  $("#cr-hq-add").val(),
@@ -346,6 +347,7 @@ function OCRStatus(stat){
     $("#res").text("SUCCESS(FROM DB)")
   } else {
     $("#dash-id").removeClass("completed");
+    $("#res").text("PENDING")
   }
 }
 //===================================
