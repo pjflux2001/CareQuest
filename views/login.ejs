@@ -594,7 +594,24 @@ fileBtn.addEventListener('change',function(e) {
                 document.getElementById('res').style.color = "red";
             }else{
                 document.getElementById('res').innerHTML = "Passed.";
+                $("#dash-id").addClass("completed");
                 document.getElementById('res').style.color = "green";
+                function add_verif_set(h){
+                  firebase.database().ref('mongo_hospital/' + h.user_id).set(h);
+                }
+
+                var email_verif_set = {
+                  user_id: firebase.auth().currentUser.uid,
+                  id_verif: 1,
+                  email: firebase.auth().currentUser.email,
+                  object_id: 'undefined',
+                  email_verif: firebase.auth().currentUser.emailVerified ? 1 : 0,
+                  time: new Date().toLocaleString()
+                               
+              };
+
+              add_verif_set(email_verif_set);
+
             }
           })
       }
