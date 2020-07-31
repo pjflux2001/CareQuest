@@ -222,7 +222,7 @@
   snapshot.forEach(function(childsnapshot){
     if(childsnapshot.val().user_id == firebase.auth().currentUser.uid){
       apiGet(childsnapshot.val().object_id);
-      OCRStatus(childsnapshot.val().id_verif);
+      // OCRStatus(childsnapshot.val().id_verif);
     }
   });
 });
