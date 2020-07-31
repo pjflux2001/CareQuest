@@ -70,7 +70,11 @@
       async:false,
       success: function(result){
         //first empty dashboard========>
+        if(!result.reason){
         $("#dash-handle").addClass("completed");
+        }
+        console.log(result);
+        
         //these for profile
         $("#mh-x").val("");
         $("#mh-y").val("");
