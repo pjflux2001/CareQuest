@@ -38,7 +38,7 @@ CareQuest aims to bring order to the chaos caused by COVID-19. To do so, CareQue
 
 ## Demo video
 
-<p align="center"><video src="https://youtu.be/vOgCOoy_Bx0"></video></p>
+<p align="center">[![Watch the video](https://github.com/Code-and-Response/Liquid-Prep/blob/master/images/IBM-interview-video-image.png)](https://youtu.be/vOgCOoy_Bx0)</video></p>
 
 ## The architecture
 
