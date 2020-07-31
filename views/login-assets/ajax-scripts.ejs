@@ -294,9 +294,12 @@ $('#dash-handle')
 
 //===============THIS SET RUNS AFTER AUTH STATE CHANGE ONLY ===============//
 function  testRedirect(){
-
+    if(firebase.auth().currentUser.emailVerified){
         window.location.href = "/test";
-
+    }
+    else {
+        alert("Verify your Email first!");
+    }
 }
 
 //========================
