@@ -121,7 +121,7 @@ npx eslint sample-file.js
 
 ## Live demo
 
-You can find a running system to test at [callforcode.mybluemix.net](http://callforcode.mybluemix.net/)
+You can find a running system to test at [https://care-quest.herokuapp.com/](https://care-quest.herokuapp.com/)
 
 ## Built with
 
