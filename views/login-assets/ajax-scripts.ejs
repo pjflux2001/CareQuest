@@ -242,9 +242,83 @@
 
   //======================DASHBOARD UTILITY================//
   function createHospital(){
+    if(firebase.auth().currentUser.emailVerified){
+      var req_body = {
+        X : $("#cr-x").val(),
+        Y : $("#cr-y").val(),
+        FID : $("#cr-fid").val(),
+        HOSPITAL_NAME : $("#cr-hname").val(),
+        HOSPITAL_TYPE : $("#cr-htype").val(),
+        HQ_ADDRESS :  $("#cr-hq-add").val(),
+        HQ_CITY:  $("#cr-hq-city").val(),
+        HQ_STATE :  $("#cr-hq-state").val(),
+        HQ_ZIP_CODE :   $("#cr-hq-zip").val(),
+        COUNTY_NAME :  $("#cr-county").val(),
+        STATE_NAME :  $("#cr-state").val(),
+        FIPS :  $("#cr-fips").val(),
+        //manage tab
+        NUM_LICENSED_BEDS :  $("#cr-beds").val(),
+        NUM_STAFFED_BEDS  :  $("#cr-st-beds").val(),
+        NUM_ICU_BEDS  :  $("#cr-icu-beds").val(),
+        ADULT_ICU_BEDS  :  $("#cr-aicu-beds").val(),
+        PEDI_ICU_BEDS : $("#cr-picu-beds").val(),
+        BED_UTILIZATION :  $("#cr-util").val(),
+        Potential_Increase_In_Bed_Capac : $("#cr-inc").val(),
+        AVG_VENTILATOR_USAGE  :  $("#cr-avg-vent").val()
+    }
+    $.ajax({
+      type : "POST",
+      url : "/api/",
+      data : req_body,
+      dataType:"json",
+      async:false,
+      success: function(result){
+        //first empty dashboard========>
+        //then append data=========>
+        //profile tab
+        $("#mh-x").val(result.X);
+        $("#mh-y").val(result.Y);
+        $("#mh-fid").val(result.FID);
+        $("#mh-hname").val(result.HOSPITAL_NAME);
+        $("#mh-htype").val(result.HOSPITAL_TYPE);
+        $("#mh-hq-add").val(result.HQ_ADDRESS);
+        $("#mh-hq-city").val(result.HQ_CITY);
+        $("#mh-hq-state").val(result.HQ_STATE);
+        $("#mh-hq-zip").val(result.HQ_ZIP_CODE);
+        $("#mh-county").val(result.COUNTY_NAME);
+        $("#mh-state").val(result.STATE_NAME);
+        $("#mh-fips").val(result.FIPS);
+        //manage tab
+        $("#mh-beds").val(result.NUM_LICENSED_BEDS);
+        $("#mh-st-beds").val(result.NUM_STAFFED_BEDS);
+        $("#mh-icu-beds").val(result.NUM_ICU_BEDS);
+        $("#mh-aicu-beds").val(result.ADULT_ICU_BEDS);
+        $("#mh-picu-beds").val(result.PEDI_ICU_BEDS)
+        $("#mh-util").val(result.BED_UTILIZATION);
+        $("#mh-inc").val(result.Potential_Increase_In_Bed_Capac);
+        $("#mh-avg-vent").val(result.AVG_VENTILATOR_USAGE);
+        console.log(result._id);
+        attacher(result._id);
+      },
+      error : function(e) {
+        //user interactive errors
+        console.log("ERROR: ", e);
+        console.log("FAILED");
+      }
+    });
+    }
       //testing id - 5f1ff6422735334c686b92e3
-    console.log("HI THERE");
-  
+  }
+  function attacher(id){
+    var var_name = firebase.database().ref().child("mongo_hospital");
+    var_name.on("value", function(snapshot) {
+    snapshot.forEach(function(childsnapshot){
+      if(childsnapshot.val().user_id == firebase.auth().currentUser.uid){
+        //here attach the id of the matched snapshot the mongo id
+        
+      }
+    });
+  })
   }
 
 
