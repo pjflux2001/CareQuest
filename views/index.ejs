@@ -332,7 +332,7 @@
              console.log(foundArr.length);
             document.getElementById("status").innerHTML = "Processing Data Points . . .";
             for(i=0;i<=50005*map.getZoom();i++){
-                if(i!=4281){
+                if(i==8989){
                     
                 let Pos = {lat: foundArr[i].Y , lng: foundArr[i].X };
                 let hospitalMarker = new H.map.Marker(Pos, {icon: hosptialIcon});
