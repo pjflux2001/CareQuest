@@ -388,11 +388,13 @@ $('#dash-handle')
 
 //===============THIS SET RUNS AFTER AUTH STATE CHANGE ONLY ===============//
 function  testRedirect(){
-    if(firebase.auth().currentUser.emailVerified){
+    if(firebase.auth().currentUser.emailVerified && document.getElementById('dash-id') == document.getElementsByClassName('step completed')[1] ? 1 : 0){
       $("#test-page").attr('style','display:block;');
     }
-    else {
-        alert("Verify your Email first!");
+    else if(firebase.auth().currentUser.emailVerified && document.getElementById('dash-id') != document.getElementsByClassName('step completed')[1]){
+        alert("Verify your ID before you start handling the hospital");
+    }else if(firebase.auth().currentUser.emailVerified ? 0 : 1){
+        alert("Verify your Email in settings first");
     }
 }
 
