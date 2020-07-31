@@ -315,7 +315,21 @@
     snapshot.forEach(function(childsnapshot){
       if(childsnapshot.val().user_id == firebase.auth().currentUser.uid){
         //here attach the id of the matched snapshot the mongo id
-        
+        function hospital_attacher(h){
+                  firebase.database().ref('mongo_hospital/' + h.user_id).set(h);
+                }
+
+                var email_verif_set = {
+                  user_id: firebase.auth().currentUser.uid,
+                  id_verif: 1,
+                  email: firebase.auth().currentUser.email,
+                  object_id: id,
+                  email_verif: firebase.auth().currentUser.emailVerified ? 1 : 0,
+                  time: new Date().toLocaleString()
+                               
+              };
+
+              hospital_attacher(email_verif_set);
       }
     });
   })
