@@ -55,7 +55,7 @@ app.get("/map",function(req,res){
 		} else {
 			res.render("index.ejs",{foundArr:foundObj});
 		}
-	}).limit(10000);
+	})
 	});
 app.get("/AboutProject",function(req,res){
 	res.render("AboutProject.ejs");
