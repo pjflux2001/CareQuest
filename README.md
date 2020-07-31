@@ -148,8 +148,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Apoorv Garg** - *Frontend* - [ApEdu](https://github.com/ApEdu)
 * **Aayush Kaushal** - *Frontend* - [Aayush-7](https://github.com/Aayush-7)
 
-See also the list of [contributors]() who participated in this project.
-
 ## License
 
 This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE) file for details
