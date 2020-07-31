@@ -70,6 +70,7 @@
       async:false,
       success: function(result){
         //first empty dashboard========>
+        $("#dash-handle").addClass("completed");
         //these for profile
         $("#mh-x").val("");
         $("#mh-y").val("");
@@ -119,6 +120,7 @@
       error : function(e) {
         //user interactive errors
         console.log("ERROR: ", e);
+        $("#dash-handle").removeClass("completed");
       }
     });   
   }
@@ -277,16 +279,19 @@
     })
   })
 
+//=======================
+//TEST PAGE REDIRECTING BUT BEFORE CHECKING ITS A VERIFIED EMAIL OR NOT
 
-//Post login profile and manage property editing 
-  // $(document).ready(function(){
+function testPage(){
+  if(firebase.auth().currentUser.emailVerified){
+  console.log("Huh you look verified");
+  }
+  else {
+    console.log("Verify Email First!");
+  }
+}
 
-  // });
-  // $('#EditProfilePageBtn').click(function(){
-  //   $('input').attr('readonly',false);
-  //   $('#EditProfilePageBtn').hide();
-  //   $('#ProfileSubmitBtnGrp').show();
-  // });
+//========================
 
 
 </script>

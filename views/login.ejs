@@ -230,6 +230,13 @@ function toggle_status(){
   firebase.auth().onAuthStateChanged(function(user) {
     const loginStylesheet = document.getElementById('login-style');
     if (user) {
+      $("input").val("");
+      if(firebase.auth().currentUser.emailVerified){
+        $("#dash-email").addClass("completed");
+      } else {
+        $("#dash-email").removeClass("completed");
+      }
+
       // User is signed in.
       dbDataRetriever();//This function brings data from mongo
      
