@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache2-red.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Website](https://img.shields.io/badge/View-Website-blue)](https://care-quest.herokuapp.com/)
 
-<strong>A platform to bring order to chaos caused by COVID-19</strong>
+<strong>A load balancing platform for medical services aimed at bringing order to the chaos caused by COVID-19</strong>
 
 ## Contents
 
@@ -38,7 +38,7 @@ CareQuest aims to bring order to the chaos caused by COVID-19. To do so, CareQue
 
 ## Demo video
 
-[![Watch the video](https://github.com/Code-and-Response/Liquid-Prep/blob/master/images/IBM-interview-video-image.png)](https://youtu.be/vOgCOoy_Bx0)
+<p align="center"><video src="https://youtu.be/vOgCOoy_Bx0"></video></p>
 
 ## The architecture
 
