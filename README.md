@@ -46,17 +46,17 @@ CareQuest aims to bring order to the chaos caused by COVID-19. To do so, CareQue
 
 1. PushBot generates regular updates (new beds in hospitals, new plasma patients/donors, stat updates) to the user and pushes them as notification
 2. IBM Watson provides assitance to the user as CareBot as it helps him/her guide through different features and functionalities 
-3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
-12.
-13.
+3. User accesses the domain using Heroku services
+4. Heroku executes nodeJS to render the website
+5. Server requests SendGrid to send mail after either of the plamsa forms is submitted
+6. SendGrid sends mail to user that contains form data
+7. Server sends requests to Firebase
+8. Firebase Authentication manages user login, register, and verification services
+9. Firebase sends all id card images to its Firebase Storage / Bucket 
+10. ID card image is then sent to Tesseract for OCR processing
+11. Firebase registers all variables related to hospital and user and stores them in Firebase Realtime Database
+12. HERE Map API (Track-a-Bed) sends hospital data to Firebase Realtime Database to link with user data
+13. mongoDB sends all hospital data from its collection to HERE Map APIs to be displayed under Track-a-Bed
 
 ## Long description
 
