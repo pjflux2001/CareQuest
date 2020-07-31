@@ -14,7 +14,6 @@
 1. [Long description](#long-description)
 1. [Project roadmap](#project-roadmap)
 1. [Getting started](#getting-started)
-1. [Running the tests](#running-the-tests)
 1. [Live demo](#live-demo)
 1. [Built with](#built-with)
 1. [Contributing](#contributing)
@@ -60,28 +59,25 @@ CareQuest aims to bring order to the chaos caused by COVID-19. To do so, CareQue
 
 ## Getting started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Ways to host the project on localhost :
         
-        Step 1 : Download and Install NodeJS and NPM packages from nodejs.org, or just use the following commands in your terminal window :
+Step 1 : Download and Install NodeJS and NPM packages from nodejs.org, or just use the following commands in your terminal window :
         
                         ```sudo apt-get install nodejs
                         sudo apt-get install npm```
-                                                                                
-        Step 2 : Install the http-server package from npm. Use the following command in your command prompt or terminal window :
+                                                                               
+Step 2 : Install the http-server package from npm. Use the following command in your command prompt or terminal window :
         
-                        npm install -g http-server
+                        ```npm install -g http-server```
                 
-        Step 3 : Navigate to the project directory using the command line interface and use :
+Step 3 : Navigate to the project directory using the command line interface and use :
                 
-                        node app.js
+                        ```node app.js```
                         
-        Step 4 : Now, open your browser and navigate to http://localhost:31000/ to access the project.
+Step 4 : Now, open your browser and navigate to http://localhost:31000/ to access the project.
         
-        OR, 
-        
-        you may access the project @ https://maps-bitsian.herokuapp.com/
 
 ## Live demo
 
