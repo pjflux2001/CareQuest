@@ -73,7 +73,7 @@
         if(!result.reason){
         $("#dash-handle").addClass("completed");
         }
-        console.log(result);
+        
         
         //these for profile
         $("#mh-x").val("");
@@ -299,6 +299,8 @@
         $("#mh-avg-vent").val(result.AVG_VENTILATOR_USAGE);
         console.log(result._id);
         attacher(result._id);
+        $("#test-page").attr('style','display:none;');
+
       },
       error : function(e) {
         //user interactive errors
