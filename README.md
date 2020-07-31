@@ -121,7 +121,7 @@ npx eslint sample-file.js
 
 ## Live demo
 
-You can find a running system to test at [callforcode.mybluemix.net](http://callforcode.mybluemix.net/)
+You can find a running system to test at [care-quest.herokuapp.com](https://care-quest.herokuapp.com/)
 
 ## Built with
 
@@ -138,7 +138,7 @@ Please read [here](CONTRIBUTING.md) for details on our code of conduct, and the 
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+We use [github](https://github.com/) for versioning. Versions will be made available as [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
@@ -147,8 +147,6 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Umang Barthwal** - *Backend And Frontend* - [barthwalumang](https://github.com/barthwalumang)
 * **Apoorv Garg** - *Frontend* - [ApEdu](https://github.com/ApEdu)
 * **Aayush Kaushal** - *Frontend* - [Aayush-7](https://github.com/Aayush-7)
-
-See also the list of [contributors]() who participated in this project.
 
 ## License
 
