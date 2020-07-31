@@ -22,7 +22,7 @@
        <i class="fa fa-key fa-lg fa-fu" aria-hidden="true"></i>
        </div>
 				
-					<button class="button" title="Sign Up" onclick="create_account()">Create</button>
+					<button class="button" title="Sign Up" onclick="create_account(); ">Create</button>
 					<p class="message" id="login-interface">Already Registered? <a href="#"> Login </a></p>
       </div>
 
@@ -308,10 +308,12 @@ function create_account(){
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-  
+
       window.alert("Error : " + errorMessage);
     });
   }
+
+
   
   function send_verification(){
   
@@ -329,6 +331,22 @@ function create_account(){
   
   
   }
+  function add_user_verification(){
+  function add_verif(h){
+          firebase.database().ref('mongo_hospital/' + h.user_id).set(h);
+        }
+
+      var user_verif = {
+      user_id: firebase.auth().currentUser.uid,
+      email: firebase.auth().currentUser.email,
+      object_id: 'undefined',
+      email_verif: 0,
+      id_verif: 0,
+      time: new Date().toLocaleString()
+    };
+
+    add_verif(user_verif);
+}
   
   function forgot_password(){
   
