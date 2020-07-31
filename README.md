@@ -62,62 +62,26 @@ CareQuest aims to bring order to the chaos caused by COVID-19. To do so, CareQue
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```bash
-dnf install wget
-wget http://www.example.com/install.sh
-bash install.sh
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be, for example
-
-```bash
-export TOKEN="fffd0923aa667c617a62f5A_fake_token754a2ad06cc9903543f1e85"
-export EMAIL="jane@example.com"
-dnf install npm
-node samplefile.js
-Server running at http://127.0.0.1:3000/
-```
-
-And repeat
-
-```bash
-curl localhost:3000
-Thanks for looking at Code-and-Response!
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why, if you were using something like `mocha` for instance
-
-```bash
-npm install mocha --save-dev
-vi test/test.js
-./node_modules/mocha/bin/mocha
-```
-
-### And coding style tests
-
-Explain what these tests test and why, if you chose `eslint` for example
-
-```bash
-npm install eslint --save-dev
-npx eslint --init
-npx eslint sample-file.js
-```
+### Ways to host the project on localhost :
+        
+        Step 1 : Download and Install NodeJS and NPM packages from nodejs.org, or just use the following commands in your terminal window :
+        
+                        ```sudo apt-get install nodejs
+                        sudo apt-get install npm```
+                                                                                
+        Step 2 : Install the http-server package from npm. Use the following command in your command prompt or terminal window :
+        
+                        npm install -g http-server
+                
+        Step 3 : Navigate to the project directory using the command line interface and use :
+                
+                        node app.js
+                        
+        Step 4 : Now, open your browser and navigate to http://localhost:31000/ to access the project.
+        
+        OR, 
+        
+        you may access the project @ https://maps-bitsian.herokuapp.com/
 
 ## Live demo
 
