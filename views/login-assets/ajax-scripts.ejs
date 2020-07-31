@@ -249,7 +249,7 @@
       var req_body = {
         X : $("#cr-x").val(),
         Y : $("#cr-y").val(),
-        FID :  Math.random() * (999999 - 10000) + 10000, //$("#cr-fid").val(),
+        FID :  Math.trunc(Math.random() * (999999 - 10000) + 10000), //$("#cr-fid").val(),
         HOSPITAL_NAME : $("#cr-hname").val(),
         HOSPITAL_TYPE : $("#cr-htype").val(),
         HQ_ADDRESS :  $("#cr-hq-add").val(),
