@@ -334,7 +334,7 @@
             for(i=0;i<=50005*map.getZoom();i++){
                 if(i==8989){
                     
-                let Pos = {lat: foundArr[i].Y , lng: foundArr[i].X };
+                let Pos = {lat: foundArr[i].X , lng: foundArr[i].Y };
                 let hospitalMarker = new H.map.Marker(Pos, {icon: hosptialIcon});
                 map.addObject(hospitalMarker);
                 hospitalMarker.setData("<h2>"+foundArr[i].HOSPITAL_NAME+"</h2><hr><b>Type : </b>"+foundArr[i].HOSPITAL_TYPE+"<br><b>Location</b> : "+foundArr[i].HQ_ADDRESS+", "+foundArr[i].HQ_CITY+", "+foundArr[i].STATE_NAME+" - "+foundArr[i].HQ_ZIP_CODE+"<br><b>No. of Licensed Beds : </b>"+foundArr[i].NUM_LICENSED_BEDS
