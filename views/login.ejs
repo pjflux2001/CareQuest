@@ -260,13 +260,13 @@ function toggle_status(){
         var email_verfied = user.emailVerified;
   
         if(email_verfied){
-          document.getElementById("verify_btn").style.display = "none";
+          //document.getElementById("verify_btn").style.display = "none";
           document.getElementById("togl").style.display = "none";
         }else{
-          document.getElementById("verify_btn").style.display = "block";
+          //document.getElementById("verify_btn").style.display = "block";
           document.getElementById("togl").style.display = "block";
         }
-        document.getElementById("user_para").innerHTML = "User : " + email_id + "<br> Verfied : " + email_verfied;
+        //document.getElementById("user_para").innerHTML = "User : " + email_id + "<br> Verfied : " + email_verfied;
   
   
       }
@@ -341,14 +341,6 @@ function create_account(){
   
   
   }
-
-  if(firebase.auth().currentUser.emailVerified){
-          document.getElementById("verify_btn").style.display = "none";
-          document.getElementById("togl").style.display = "none";
-        }else{
-          document.getElementById("verify_btn").style.display = "block";
-          document.getElementById("togl").style.display = "block";
-        }
 
         
   function add_user_verification(){
@@ -577,9 +569,11 @@ fileBtn.addEventListener('change',function(e) {
         document.getElementById('chs').style.display = "none"
         var percentage = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
         uploader.value = percentage;
+        
       },
       function error(err){
           //write some error here please
+          
           alert("Error");
       },
       function complete(){
