@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache2-red.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Website](https://img.shields.io/badge/View-Website-blue)](https://care-quest.herokuapp.com/)
 
-<strong>A platform to bring order to chaos caused by COVID-19</strong>
+<strong>A load balancing platform for medical services aimed at bringing order to the chaos caused by COVID-19</strong>
 
 ## Contents
 
@@ -44,10 +44,19 @@ CareQuest aims to bring order to the chaos caused by COVID-19. To do so, CareQue
 
 <p align="center"><img src="https://github.com/pjflux2001/CareQuest/blob/master/public/architecture.png?raw=true" width = "66%" height = "66%"></p>
 
-1. The user navigates to the site and uploads a video file.
-2. Watson Speech to Text processes the audio and extracts the text.
-3. Watson Translation (optionally) can translate the text to the desired language.
-4. The app stores the translated text as a document within Object Storage.
+1. PushBot generates regular updates (new beds in hospitals, new plasma patients/donors, stat updates) to the user and pushes them as notification
+2. IBM Watson provides assitance to the user as CareBot as it helps him/her guide through different features and functionalities 
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
 
 ## Long description
 
