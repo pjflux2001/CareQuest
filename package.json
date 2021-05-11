@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "firebase": "^7.16.1",
     "firebase-admin": "^8.13.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "mongoose": "^5.9.25",
     "nodemailer": "^6.4.11",
     "pug": "^3.0.0",
