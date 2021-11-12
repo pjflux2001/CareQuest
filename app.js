@@ -239,6 +239,54 @@ app.post("/email",function(req,res){
 })
 
 //========================//
+//RAPID : SMS
+
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+  url: 'https://rapidapi.rmlconnect.net:9443/bulksms/bulksms?username=617bf2e0245383001100f89b&password=617bf2e0245383001100f89b&type=0&dlr=1&destination=+917038170634&source=RMLPRD&message=Logged_In_Success',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+//RAPID : Whatsapp
+// var axios = require('axios');
+var data = JSON.stringify({
+  "phone": "+917038170634",
+  "text": "Logged_In_Success",
+  "extra": "WA"
+});
+
+var config = {
+  method: 'post',
+  url: 'https://rapidapi.rmlconnect.net/wbm/v1/message',
+  headers: { 
+    'Content-Type': 'application/json', 
+    'Authorization': '617bf2e0245383001100f89b'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+
+
+
+//========================//
 //LISTENER PROCESS
 var port = process.env.PORT || 31000
 app.listen(port,process.env.IP,function(){
